@@ -1,0 +1,668 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Abhaya Libre", serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Header */
+header {
+    background-color: #000;
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between logo and nav */
+}
+
+header .logo {
+    display: flex;
+    align-items: center; /* Center logo image and text vertically */
+}
+
+header .logo img {
+    width: 80px;
+    margin-right: 0rem; /* Adjust margin to move the image closer to the text */
+    margin-left: -1.1rem;
+}
+
+header .logo-text {
+    color: #fff;
+    margin-left: 0; /* Ensure no extra left margin */
+}
+
+header .logo-text h1 {
+    font-size: 2rem;
+    margin: 0; /* Remove default margin */
+}
+
+header nav {
+    margin-left: auto; /* Push nav to the far right */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #b40e1d;
+}
+
+/* Hero Section */
+.hero {
+    background:  #b40e1d;/*, #ff6f61);*/
+    color: #fff;
+    padding: -20rem 20;
+    width: 100%;
+    height: 200%;
+    max-height: 115%;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    transform: translateX(-50%);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    max-width: 48%;
+    padding-bottom: 3.8rem;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+}
+
+.hero .btn {
+    background-color: #000;
+    color: #FFE;
+    padding: 0.8rem 1.2rem;
+    text-decoration: none;
+    border-radius: 24px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #c34f47;
+}
+
+.hero-image img {
+    width: 120%;
+    width: 39rem;
+    height: auto;
+    border-radius: 10px;
+    padding-top: 10px;
+    margin-right: -9rem;
+    margin-top: 2rem;
+}
+
+/* Discover Section */
+.discover {
+    background-color: #f3e4da;
+    color: #333;
+    padding: 3rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.discover-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.discover h2 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.discover p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.dots {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #333;
+}
+
+.dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Fashion Persona Section */
+.fashion-persona {
+    background-color: #fff;
+    padding: 3rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.fashion-persona h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.fashion-persona p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.fashion-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.fashion-images img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Fashion Creativity Section */
+.fashion-creativity {
+    background-color: #f3e4da;
+    color: #333;
+    padding: 3rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.fashion-creativity h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.fashion-creativity p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.creativity-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.creativity-images img {
+    width: 100%;
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Fashion Lives Section */
+.fashion-lives {
+    background-color: #fff;
+    padding: 3rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.fashion-lives-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.fashion-lives .image-section img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.fashion-lives .text-section {
+    max-width: 58%;
+}
+
+.fashion-lives .text-section h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.fashion-lives .text-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.fashion-lives .text-section button {
+    background-color: #000;
+    color: #fff;
+    padding: 0.8rem 2.2rem;
+    border: none;
+    border-radius: 37px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.fashion-lives .text-section button:hover {
+    background-color: #470902;
+}
+
+/* Haute Couture Section */
+.fashion-couture {
+    background-color: #8B0000; /* Background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width */
+    height: 677px; /* Height to match the image */
+    margin: 0 auto; /* Center horizontally */
+    padding: 0; /* Remove default padding */
+}
+
+.fashion-couture-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.couture-text-section {
+    flex: 0 0 50%;
+    padding: 0 4rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.couture-text-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    padding-left:0rem;
+}
+
+.couture-text-section p {
+    font-size: 1.4rem;
+    max-width: 600px;
+}
+
+.couture-image-section {
+    flex: 0 0 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+}
+
+.couture-image-section img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+@media (max-width: 1440px) {
+    .fashion-couture-content {
+        flex-direction: column;
+    }
+    
+    .couture-text-section {
+        flex: 1;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .couture-image-section {
+        flex: 1;
+        width: 100%;
+        height: auto;
+    }
+
+    .couture-image-section img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Feedback Section */
+.feedback-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #8B0000; /* Maroon background */
+}
+
+.feedback-form-container {
+    display: flex;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form {
+    padding: 40px;
+    flex: 1;
+    background-color: #fff; /* White background */
+}
+
+.feedback-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #8B0000; /* Maroon background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7a0000;
+}
+
+.feedback-info {
+    flex: 1;
+    background: url('images/FeedbackFigmaSS.png') no-repeat center center/cover; 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedback-info h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.feedback-info p {
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-container img {
+    margin: 4px;
+}
+
+.download-section {
+    flex: 1;
+    text-align: center;
+}
+
+.download-section p {
+    margin-bottom: 10px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.footer-logo img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    margin: 0 10px;
+}
+
+.footer-social img {
+    height: 41px;
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 10px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+    .hero .btn {
+        font-size: 0.9rem;
+    }
+    .fashion-lives .text-section h1 {
+        font-size: 3.5rem;
+    }
+    .fashion-lives .text-section p {
+        font-size: 1.1rem;
+    }
+    .fashion-lives .text-section button {
+        padding: 0.7rem 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .hero-text {
+        max-width: 100%;
+    }
+    .hero-image img {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .fashion-lives .text-section {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+    .hero .btn {
+        font-size: 0.8rem;
+    }
+    .fashion-lives .text-section h1 {
+        font-size: 3rem;
+    }
+    .fashion-lives .text-section p {
+        font-size: 1rem;
+    }
+    .fashion-lives .text-section button {
+        padding: 0.6rem 1.8rem;
+    }
+    .fashion-images img,
+    .creativity-images img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content {
+        flex-direction: column;
+    }
+    .fashion-persona h1,
+    .fashion-creativity h1,
+    .fashion-lives .text-section h1 {
+        font-size: 2rem;
+    }
+    .fashion-persona p,
+    .fashion-creativity p,
+    .fashion-lives .text-section p {
+        font-size: 0.9rem;
+    }
+    .hero .btn {
+        padding: 0.6rem 1rem;
+    }
+    .fashion-lives .text-section button {
+        padding: 0.5rem 1.5rem;
+    }
+}
