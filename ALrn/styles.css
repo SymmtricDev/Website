@@ -147,7 +147,7 @@ header nav ul li a:hover {
     height: auto;
     border-radius: 10px;
     padding-top: 10px;
-    margin-right: -9rem;
+    /* margin-right: -9rem; */
     margin-top: 2rem;
 }
 
@@ -302,17 +302,19 @@ header nav ul li a:hover {
 }
 
 .fashion-lives .text-section h1 {
-    font-size: 4.5rem;
+    font-size: 4.2rem;
     margin-bottom: 1rem;
-    font-weight: bold;
-    text-align: left;
+    font-weight: bolder;
+    text-align: right;
     margin-bottom: 1rem;
-    padding-left: 2rem;
+    padding-left: 0rem;
 }
 
 .fashion-lives .text-section p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
+    margin-left: 15rem;
+    text-align: right;
 }
 
 .fashion-lives .text-section button {
@@ -323,6 +325,7 @@ header nav ul li a:hover {
     border-radius: 37px;
     font-size: 1rem;
     transition: background-color 0.3s ease;
+    margin-left: 33rem
 }
 
 .fashion-lives .text-section button:hover {
@@ -431,8 +434,11 @@ header nav ul li a:hover {
 }
 
 .feedback-form h2 {
-    font-size: 1.5rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
+    text-align: center;
+    font-weight: bolder;
+
 }
 
 .form-group {
