@@ -14,7 +14,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
     }
 
     // Form submission logic (e.g., sending data to server)
-    // Here, we'll just log the data to the console
+    // Here, we'll just log the data to the console  
     console.log({
         name: name,
         email: email,
@@ -27,4 +27,13 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
     
     // Reset the form
     document.getElementById('feedbackForm').reset();
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        burger.classList.toggle('active');
+    });
 });

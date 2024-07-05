@@ -476,7 +476,7 @@ button:hover {
 
 .feedback-info {
     flex: 1;
-    background: url('images/FeedbackFigmaSS.png') no-repeat center center/cover; 
+    background: url('images/feedbacksvg.svg') no-repeat center center/cover; 
     color: #fff;
     display: flex;
     flex-direction: column;
