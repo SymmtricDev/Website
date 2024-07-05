@@ -325,12 +325,79 @@ header nav ul li a:hover {
     border-radius: 37px;
     font-size: 1rem;
     transition: background-color 0.3s ease;
-    margin-left: 33rem
+    margin-left: 33rem;
 }
 
 .fashion-lives .text-section button:hover {
     background-color: #470902;
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .fashion-lives .text-section h1 {
+        font-size: 3.5rem;
+        margin-left: 0;
+    }
+    .fashion-lives .text-section p {
+        font-size: 1.1rem;
+        margin-left: 0;
+    }
+    .fashion-lives .text-section button {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .fashion-lives-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .fashion-lives .text-section {
+        max-width: 100%;
+        padding: 0 1rem;
+        text-align: center;
+    }
+    .fashion-lives .text-section h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+    .fashion-lives .text-section p {
+        font-size: 1rem;
+        text-align: center;
+        margin-left: 0;
+    }
+    .fashion-lives .text-section button {
+        margin-left: 0;
+        width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .fashion-lives .text-section h1 {
+        font-size: 2.5rem;
+    }
+    .fashion-lives .text-section p {
+        font-size: 0.9rem;
+    }
+    .fashion-lives .text-section button {
+        font-size: 0.9rem;
+        padding: 0.7rem 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .fashion-lives .text-section h1 {
+        font-size: 2rem;
+    }
+    .fashion-lives .text-section p {
+        font-size: 0.8rem;
+    }
+    .fashion-lives .text-section button {
+        font-size: 0.8rem;
+        padding: 0.6rem 1.8rem;
+    }
+}
+
 
 /* Haute Couture Section */
 .fashion-couture {
