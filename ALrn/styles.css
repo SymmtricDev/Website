@@ -366,8 +366,8 @@ header nav ul li a:hover {
 }
 
 .couture-text-section p {
-    font-size: 1.4rem;
-    max-width: 600px;
+    font-size: 1.2rem;
+    max-width: 480px;
 }
 
 .couture-image-section {
@@ -493,6 +493,89 @@ button:hover {
 .feedback-info p {
     font-size: 1rem;
     color: #fff;
+}
+
+/* Footer Styles */
+.feedback-section {
+    position: relative;
+    padding: 40px 0;
+    background-color: #fff; /* White background */
+    overflow: hidden;
+    z-index: 0;
+}
+
+.feedback-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.feedback-form-container {
+    position: relative;
+    z-index: 2; /* Ensure the form is on top of the background split */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+}
+
+.feedback-form {
+    padding: 40px;
+}
+
+.feedback-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+footer.button {
+    padding: 10px 20px;
+    background-color: #8B0000; /* Maroon background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+footer.button:hover {
+    background-color: #7a0000;
+}
+
+/* Split Background with Longer, Less Rounded Maroon Bottom Section */
+.feedback-section::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%; /* Adjust the height to make the maroon section longer */
+    background-color: #8B0000; /* Maroon background */
+    border-top-left-radius: 4%; /* Adjust the border-radius to make it less round */
+    border-top-right-radius: 4%; /* Adjust the border-radius to make it less round */
+    z-index: -1;
 }
 
 /* Footer Styles */
