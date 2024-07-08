@@ -397,8 +397,6 @@ header nav ul li a:hover {
         padding: 0.6rem 1.8rem;
     }
 }
-
-
 /* Haute Couture Section */
 .fashion-couture {
     background-color: #8B0000; /* Background color */
@@ -432,7 +430,7 @@ header nav ul li a:hover {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     font-weight: bold;
-    padding-left:0rem;
+    padding-left: 0rem;
 }
 
 .couture-text-section p {
@@ -453,15 +451,16 @@ header nav ul li a:hover {
     object-fit: cover;
 }
 
+/* Media Queries */
 @media (max-width: 1440px) {
     .fashion-couture-content {
         flex-direction: column;
     }
-    
+
     .couture-text-section {
         flex: 1;
         text-align: center;
-        padding: 1rem;
+        padding: 2rem 1rem;
     }
 
     .couture-image-section {
@@ -476,6 +475,116 @@ header nav ul li a:hover {
     }
 }
 
+@media (max-width: 1024px) {
+    .fashion-couture {
+        height: auto;
+        padding: 1rem;
+    }
+
+    .fashion-couture-content {
+        flex-direction: column;
+    }
+
+    .couture-text-section {
+        flex: none;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .couture-text-section h1 {
+        font-size: 3rem;
+    }
+
+    .couture-text-section p {
+        font-size: 1.1rem;
+    }
+
+    .couture-image-section {
+        flex: none;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+    }
+
+    .couture-image-section img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .fashion-couture {
+        height: auto;
+        padding: 1rem;
+    }
+
+    .fashion-couture-content {
+        flex-direction: column;
+    }
+
+    .couture-text-section {
+        flex: none;
+        padding: 1.5rem 1rem;
+        text-align: center;
+    }
+
+    .couture-text-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .couture-text-section p {
+        font-size: 1rem;
+    }
+
+    .couture-image-section {
+        flex: none;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+    }
+
+    .couture-image-section img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .fashion-couture {
+        height: auto;
+        padding: 0.5rem;
+    }
+
+    .fashion-couture-content {
+        flex-direction: column;
+    }
+
+    .couture-text-section {
+        flex: none;
+        padding: 1rem 0.5rem;
+        text-align: center;
+    }
+
+    .couture-text-section h1 {
+        font-size: 2rem;
+    }
+
+    .couture-text-section p {
+        font-size: 0.9rem;
+    }
+
+    .couture-image-section {
+        flex: none;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+    }
+
+    .couture-image-section img {
+        width: 100%;
+        height: auto;
+    }
+}
 /* Feedback Section */
 .feedback-section {
     display: flex;
@@ -492,6 +601,8 @@ header nav ul li a:hover {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 0 auto; /* Ensure it is centered */
 }
 
 .feedback-form {
@@ -505,7 +616,6 @@ header nav ul li a:hover {
     margin-bottom: 20px;
     text-align: center;
     font-weight: bolder;
-
 }
 
 .form-group {
@@ -568,6 +678,146 @@ button:hover {
     color: #fff;
 }
 
+/* Media Queries for Feedback Form */
+
+@media (max-width: 1024px) {
+    .feedback-form-container {
+        flex-direction: column;
+    }
+
+    .feedback-form {
+        padding: 30px;
+    }
+
+    .feedback-form h2 {
+        font-size: 2.5rem;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .feedback-form {
+        padding: 20px;
+    }
+
+    .feedback-form h2 {
+        font-size: 2rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+        font-size: 0.8rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+    }
+
+    .feedback-info {
+        padding: 20px;
+        background-size: cover;
+    }
+
+    .feedback-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .feedback-info p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feedback-form {
+        padding: 15px;
+    }
+
+    .feedback-form h2 {
+        font-size: 1.8rem;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+        font-size: 0.7rem;
+    }
+
+    button {
+        font-size: 0.7rem;
+        padding: 8px 12px;
+    }
+
+    .feedback-info {
+        padding: 15px;
+        background-size: cover;
+    }
+
+    .feedback-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .feedback-info p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .feedback-form {
+        padding: 10px;
+    }
+
+    .feedback-form h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-group label {
+        font-size: 0.7rem;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+        font-size: 0.6rem;
+    }
+
+    button {
+        font-size: 0.6rem;
+        padding: 5px 10px;
+    }
+
+    .feedback-info {
+        padding: 10px;
+        background-size: cover;
+    }
+
+    .feedback-info h2 {
+        font-size: 1rem;
+    }
+
+    .feedback-info p {
+        font-size: 0.6rem;
+    }
+}
+
 /* Footer Styles */
 .feedback-section {
     position: relative;
@@ -621,6 +871,7 @@ button:hover {
     font-size: 1rem;
 }
 
+
 footer.button {
     padding: 10px 20px;
     background-color: #8B0000; /* Maroon background */
@@ -655,7 +906,7 @@ footer.button:hover {
 footer {
     background-color: #000;
     color: #fff;
-    padding: 40px 0;
+    /* padding: 40px 0; */
     text-align: center;
 }
 
@@ -666,7 +917,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .footer-container img {
@@ -736,6 +987,62 @@ footer {
     margin: 0;
     font-size: 0.8rem;
 }
+
+@media (max-width: 768px) {
+    .feedback-form-container {
+        flex-direction: column;
+    }
+
+    .feedback-form {
+        padding: 20px;
+    }
+
+    .feedback-info {
+        padding: 20px;
+        background-size: cover;
+    }
+
+    .feedback-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .feedback-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Footer Styles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content, .footer-links, .download-section {
+        width: 100%;
+    }
+
+    .footer-logo img {
+        height: 40px;
+    }
+
+    .footer-links li {
+        margin: 5px 0;
+    }
+
+    .footer-social {
+        margin-top: 10px;
+    }
+
+    .footer-social img {
+        height: 30px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.7rem;
+    }
+}
+
 
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {

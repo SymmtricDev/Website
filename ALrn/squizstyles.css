@@ -1,0 +1,373 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Abhaya Libre", serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Header */
+header {
+    background-color: #000;
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between logo and nav */
+}
+
+header .logo {
+    display: flex;
+    align-items: center; /* Center logo image and text vertically */
+}
+
+header .logo img {
+    width: 80px;
+    margin-right: 0rem; /* Adjust margin to move the image closer to the text */
+    margin-left: -1.1rem;
+}
+
+header .logo-text {
+    color: #fff;
+    margin-left: 0; /* Ensure no extra left margin */
+}
+
+header .logo-text h1 {
+    font-size: 2rem;
+    margin: 0; /* Remove default margin */
+}
+
+header nav {
+    margin-left: auto; /* Push nav to the far right */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #b40e1d;
+}
+
+/* Squiz section styles */
+.squiz-section {
+    background-color: #940e19;
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.squiz-section .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.squiz-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.squiz-image-left, .squiz-image-right {
+    flex: 1;
+}
+
+.squiz-image-left img, .squiz-image-right img {
+    max-width: 100%;
+    height: 32rem;
+    border-radius: 10px;
+}
+
+.squiz-text {
+    flex: 2;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.squiz-text h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.squiz-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.squiz-text button {
+    background-color: #000;
+    color: #fff;
+    padding: 0.8rem 2.2rem;
+    border: none;
+    border-radius: 37px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.squiz-text button:hover {
+    background-color: #333;
+}
+
+/* Footer styles */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Quiz Options Section */
+.quiz-options {
+    background-color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.quiz-options .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.quiz-options .option {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 2rem;
+    flex: 0 0 45%;
+    margin: 1rem 0;
+    transition: box-shadow 0.3s ease;
+}
+
+/* .quiz-options .option:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+.quiz-options h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.quiz-options p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/*new section for the shapes */
+
+
+.quiz-container {
+    text-align: center;
+    width: 100%;
+    background-color: #EAE4D6;
+}
+
+.quiz-container h1 {
+    font-size: 3.3rem;
+    margin-bottom: 20px;
+    padding-top: 3.5rem;
+}
+
+.persona-card {
+    display: inline-block;
+    background: white;
+    border-radius: 10px;
+    padding: 0px;
+    width: 250px;
+    margin: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.persona-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+/* footer stuff */
+
+footer.button {
+    padding: 10px 20px;
+    background-color: #8B0000; /* Maroon background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+footer.button:hover {
+    background-color: #7a0000;
+}
+
+/* Split Background with Longer, Less Rounded Maroon Bottom Section */
+.feedback-section::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%; /* Adjust the height to make the maroon section longer */
+    background-color: #8B0000; /* Maroon background */
+    border-top-left-radius: 4%; /* Adjust the border-radius to make it less round */
+    border-top-right-radius: 4%; /* Adjust the border-radius to make it less round */
+    z-index: -1;
+}
+
+/* Footer Styles */
+
+/* Footer Styles */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* padding: 20px; */
+}
+
+.footer-container img {
+    margin: 4px;
+}
+
+.download-section {
+    flex: 1;
+    text-align: center;
+}
+
+.download-section p {
+    margin-bottom: 10px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.footer-logo img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    margin: 0 10px;
+}
+
+.footer-social img {
+    height: 41px;
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 10px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+
+/* Footer Styles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content, .footer-links, .download-section {
+        width: 100%;
+    }
+
+    .footer-logo img {
+        height: 40px;
+    }
+
+    .footer-links li {
+        margin: 5px 0;
+    }
+
+    .footer-social {
+        margin-top: 10px;
+    }
+
+    .footer-social img {
+        height: 30px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.7rem;
+    }
+}
