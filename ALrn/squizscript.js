@@ -73,3 +73,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize the quiz
     updateQuiz();
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const fadeElements = document.querySelectorAll('.fade-in-up');
+    
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    fadeElements.forEach(el => {
+        observer.observe(el);
+    });
+});

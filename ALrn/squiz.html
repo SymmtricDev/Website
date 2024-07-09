@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Squiz | Symmatric</title>
     <link rel="stylesheet" href="squizstyles.css"> <!-- Link to your Squiz CSS file -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
 </head>
 <body>
     <header>
-        <div class="container" data-aos="fade-down" data-aos-duration="1500">
+        <div class="container fade-right" data-aos="fade-right" data-aos-duration="1500">
             <div class="logo">
                 <img src="images/app-logoMaroon.png" alt="Symmatric Logo">
             </div>
@@ -17,36 +18,27 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html" data-aos="fade-down" data-aos-delay="200">Who we are</a></li>
-                    <!-- <li><a href="#" data-aos="fade-down" data-aos-delay="400">What's new</a></li>
-                    <li><a href="#" data-aos="fade-down" data-aos-delay="600">Feedback</a></li> -->
-                    <li><a href="squiz.html" data-aos="fade-down" data-aos-delay="800">Squiz</a></li>
+                    <li><a href="index.html" data-aos="fade-right" data-aos-delay="200">Who we are</a></li>
+                    <li><a href="squiz.html" data-aos="fade-right" data-aos-delay="800">Squiz</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="squiz-section">
+    <section class="squiz-section" data-aos="fade-right" data-aos-duration="1500">
         <div class="container">
-            <div class="squiz-content">
-                <div class="squiz-image-left">
-                    <img src="images/left.svg" alt="Left Image">
-                </div>
+            <div class="squiz-content fade-right">
                 <div class="squiz-text">
                     <h2>Are you a Fashion police or a Fashion criminal?</h2>
                     <p>Find out if you're setting the trends or defying them!</p>
                     <button onclick="document.getElementById('squiz-quiz-section').scrollIntoView({ behavior: 'smooth' });">Take a Quiz ↓</button>
-
-                </div>
-                <div class="squiz-image-right">
-                    <img src="images/squizright.svg" alt="Right Image">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="quiz-options">
-        <div class="container">
+    <section class="quiz-options" data-aos="fade-up">
+        <div class="container fade-in-up">
             <div class="option">
                 <h3>Fashion Police</h3>
                 <p>Are you the trend enforcer who loves critiquing outfits and making sure everyone looks their best?</p>
@@ -57,8 +49,9 @@
             </div>
         </div>
     </section>
+
     <section>
-        <div class="quiz-container">
+        <div class="quiz-container fade-in-up" data-aos="fade-up">
             <h1>What's Your Fashion Persona?</h1>
             <div class="persona-card">
                 <img src="images/squizrebelsvg.svg" alt="You are a rebel">
@@ -73,8 +66,8 @@
     </section>
 
     <section class="squiz-quiz-section">
-        <div class="squiz-quiz-container" id="squiz-quiz-section">
-            <div class="squiz-progress">
+        <div class="squiz-quiz-container fade-in-up" id="squiz-quiz-section" data-aos="fade-up">
+            <div class="squiz-progress" data-aos="fade-right" data-aos-duration="1500">
                 <div class="squiz-progress-dot active"></div>
                 <div class="squiz-progress-line"></div>
                 <div class="squiz-progress-dot"></div>
@@ -86,36 +79,35 @@
                 <div class="squiz-progress-dot"></div>
             </div>
             <div class="squiz-quiz-card">
-                <img src="images/quiz-placeholder.png" alt="Question 1 Image" class="squiz-quiz-image">
+                <img src="images/quiz-placeholder.png" alt="Question 1 Image" class="squiz-quiz-image" data-aos="zoom-in">
                 <div class="squiz-quiz-content">
-                    <h2>Question 1</h2>
-                    <p>Does the person next to you looks & dresses better than you?</p>
-                    <select class="squiz-quiz-options">
+                    <h2 data-aos="fade-up">Question 1</h2>
+                    <p data-aos="fade-up">Does the person next to you looks & dresses better than you?</p>
+                    <select class="squiz-quiz-options" data-aos="fade-up">
                         <option>Select from the options</option>
                         <!-- Add more options as needed -->
                     </select>
                     <div class="squiz-quiz-buttons">
-                        <button class="squiz-quiz-back">← Back</button>
-                        <button class="squiz-quiz-next">Next ➜</button>
+                        <button class="squiz-quiz-back" data-aos="fade-left">← Back</button>
+                        <button class="squiz-quiz-next" data-aos="fade-right">Next ➜</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="squiz-quiz-footer">
+        <div class="squiz-quiz-footer" data-aos="fade-up">
             <p>Liked the quiz? Share it with your crew!</p>
             <div class="squiz-social-icons">
-                <a href="#"><img src="images/squizTwitter.svg"i class="fa fa-twitter"></i></a>
-                <a href="#"><img src="images/squizIg.svg"i class="fa fa-instagram"></i></a>
-                <a href="#"><img src="images/squizFB.svg"i class="fa fa-facebook"></i></a>
-                <a href="#"><img src="images/squizYoutube.svg"i class="fa fa-youtube"></i></a>
-                <a href="#"><img src="images/squizLinkedin.svg"i class="fa fa-linkedin"></i></a>
+                <a href="#"><img src="images/squizTwitter.svg" class="fa fa-twitter"></a>
+                <a href="#"><img src="images/squizIg.svg" class="fa fa-instagram"></a>
+                <a href="#"><img src="images/squizFB.svg" class="fa fa-facebook"></a>
+                <a href="#"><img src="images/squizYoutube.svg" class="fa fa-youtube"></a>
+                <a href="#"><img src="images/squizLinkedin.svg" class="fa fa-linkedin"></a>
             </div>
         </div>
     </section>
 
-
-    <section class="loop-section">
-        <div class="container">
+    <section class="loop-section" data-aos="fade-up">
+        <div class="container fade-in-up">
             <h2>Stay in the loop with Symmatric</h2>
             <div class="loop-cards">
                 <div class="loop-card">
@@ -127,10 +119,9 @@
             </div>
         </div>
     </section>
-    
 
     <footer>
-        <div class="footer-container">
+        <div class="footer-container fade-in-up" data-aos="fade-up">
             <div class="download-section">
                 <p>Start your Fashion Journey on</p>
                 <a href="https://bit.ly/3ro3anT"><img src="images/googleplaysvg.svg" alt="Google Play"></a>
@@ -139,10 +130,9 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <img src="images/FashionConnectInspireFooter.png" alt="Symmatric Logo">
-                    <!-- <p>Fashion. Connect. Inspire.</p> -->
                 </div>
                 <ul class="footer-links">
-                    <li><a href="index.html">Who we are</a></li>     
+                    <li><a href="index.html">Who we are</a></li>
                     <li><a href="#">What's New</a></li>
                     <li><a href="#">Feedback Form</a></li>
                 </ul>
@@ -154,12 +144,15 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom" data-aos="fade-up">
             <p>&copy; 2024 Symmatric. All rights reserved.</p>
         </div>
     </footer>
-    
 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="squizscript.js"></script> <!-- Link to your Squiz JS file -->
 </body>
 </html>

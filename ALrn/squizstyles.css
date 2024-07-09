@@ -122,7 +122,7 @@ header nav ul li a:hover {
 
 .squiz-text p {
     font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 4.5rem;
 }
 
 .squiz-text button {
@@ -290,101 +290,6 @@ footer.button:hover {
 }
 
 /* Squiz Quiz Section */
-/* .squiz-quiz-section {
-    background-color: #F9F8F4;
-    padding: 4rem 0;
-    text-align: center;
-}
-
-.squiz-quiz-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.squiz-quiz-card {
-    background-color: #fff;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 1202px;
-    position: relative;
-}
-
-.squiz-quiz-image {
-    width: 100%;
-    height: auto;
-}
-
-.squiz-quiz-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    text-align: center;
-    padding: 2rem;
-}
-
-.squiz-quiz-content h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
-.squiz-quiz-content p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-.squiz-quiz-options {
-    width: 50%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    border: none;
-    border-radius: 5px;
-}
-
-.squiz-quiz-next {
-    background-color: #b40e1d;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.squiz-quiz-next:hover {
-    background-color: #a00d1a;
-}
-
-.squiz-quiz-footer {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.squiz-quiz-footer p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.squiz-social-icons a {
-    color: #333;
-    margin: 0 0.5rem;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.squiz-social-icons a:hover {
-    color: #b40e1d;
-} */
- /* Squiz Quiz Section */
  .squiz-quiz-section {
     background-color: #fff;
     padding: 4rem 0;
@@ -416,18 +321,18 @@ footer.button:hover {
 }
 
 .squiz-progress-dot.active {
-    background-color: #b40e1d;
+    background-color: #98021D;
 }
 
 .squiz-progress-line {
-    width: 50px;
-    height: 4px;
+    width: 17rem;
+    height: 2px;
     background-color: #ccc;
     transition: background-color 0.3s ease;
 }
 
 .squiz-progress-dot.active + .squiz-progress-line {
-    background-color: #b40e1d;
+    background-color: #98021D;
 }
 
 .squiz-quiz-card {
@@ -819,4 +724,55 @@ footer {
     .footer-bottom p {
         font-size: 0.7rem;
     }
+}
+
+/* animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.loop-section .loop-card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.loop-section .loop-card img:hover {
+    transform: scale(1.05);
+}
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.appear {
+    opacity: 1;
+    transform: translateY(0);
 }
