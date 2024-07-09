@@ -35,7 +35,8 @@
                 <div class="squiz-text">
                     <h2>Are you a Fashion police or a Fashion criminal?</h2>
                     <p>Find out if you're setting the trends or defying them!</p>
-                    <button>Take a Quiz ↓</button>
+                    <button onclick="document.getElementById('squiz-quiz-section').scrollIntoView({ behavior: 'smooth' });">Take a Quiz ↓</button>
+
                 </div>
                 <div class="squiz-image-right">
                     <img src="images/squizright.svg" alt="Right Image">
@@ -72,7 +73,7 @@
     </section>
 
     <section class="squiz-quiz-section">
-        <div class="squiz-quiz-container">
+        <div class="squiz-quiz-container" id="squiz-quiz-section">
             <div class="squiz-progress">
                 <div class="squiz-progress-dot active"></div>
                 <div class="squiz-progress-line"></div>
@@ -121,7 +122,7 @@
                     <img src="images/squizwhatsnewsvg.svg" alt="Who we are">
                 </div>
                 <div class="loop-card">
-                    <img src="images/squizwhoweare.svg" alt="What's New">
+                    <a href="index.html"><img src="images/squizwhoweare.svg" alt="What's New"></a>
                 </div>
             </div>
         </div>
