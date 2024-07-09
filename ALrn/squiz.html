@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <div class="container fade-right" data-aos="fade-right" data-aos-duration="1500">
+        <div class="container" data-aos="fade-right" data-aos-duration="1500">
             <div class="logo">
                 <img src="images/app-logoMaroon.png" alt="Symmatric Logo">
             </div>
@@ -19,15 +19,15 @@
             <nav>
                 <ul>
                     <li><a href="index.html" data-aos="fade-right" data-aos-delay="200">Who we are</a></li>
-                    <li><a href="squiz.html" data-aos="fade-right" data-aos-delay="800">Squiz</a></li>
+                    <li><a href="squiz.html" data-aos="fade-right" data-aos-delay="400">Squiz</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="squiz-section" data-aos="fade-right" data-aos-duration="1500">
-        <div class="container">
-            <div class="squiz-content fade-right">
+    <section class="squiz-section">
+        <div class="container" data-aos="fade-right" data-aos-duration="1500">
+            <div class="squiz-content">
                 <div class="squiz-text">
                     <h2>Are you a Fashion police or a Fashion criminal?</h2>
                     <p>Find out if you're setting the trends or defying them!</p>
@@ -37,8 +37,8 @@
         </div>
     </section>
 
-    <section class="quiz-options" data-aos="fade-up">
-        <div class="container fade-in-up">
+    <section class="quiz-options" data-aos="fade-up" data-aos-duration="1500">
+        <div class="container">
             <div class="option">
                 <h3>Fashion Police</h3>
                 <p>Are you the trend enforcer who loves critiquing outfits and making sure everyone looks their best?</p>
@@ -51,7 +51,7 @@
     </section>
 
     <section>
-        <div class="quiz-container fade-in-up" data-aos="fade-up">
+        <div class="quiz-container" data-aos="fade-up" data-aos-duration="1500">
             <h1>What's Your Fashion Persona?</h1>
             <div class="persona-card">
                 <img src="images/squizrebelsvg.svg" alt="You are a rebel">
@@ -66,7 +66,7 @@
     </section>
 
     <section class="squiz-quiz-section">
-        <div class="squiz-quiz-container fade-in-up" id="squiz-quiz-section" data-aos="fade-up">
+        <div class="squiz-quiz-container" id="squiz-quiz-section" data-aos="fade-up" data-aos-duration="1500">
             <div class="squiz-progress" data-aos="fade-right" data-aos-duration="1500">
                 <div class="squiz-progress-dot active"></div>
                 <div class="squiz-progress-line"></div>
@@ -94,7 +94,7 @@
                 </div>
             </div>
         </div>
-        <div class="squiz-quiz-footer" data-aos="fade-up">
+        <div class="squiz-quiz-footer" data-aos="fade-up" data-aos-duration="1500">
             <p>Liked the quiz? Share it with your crew!</p>
             <div class="squiz-social-icons">
                 <a href="#"><img src="images/squizTwitter.svg" class="fa fa-twitter"></a>
@@ -106,8 +106,8 @@
         </div>
     </section>
 
-    <section class="loop-section" data-aos="fade-up">
-        <div class="container fade-in-up">
+    <section class="loop-section" data-aos="fade-up" data-aos-duration="1500">
+        <div class="container">
             <h2>Stay in the loop with Symmatric</h2>
             <div class="loop-cards">
                 <div class="loop-card">
@@ -121,7 +121,7 @@
     </section>
 
     <footer>
-        <div class="footer-container fade-in-up" data-aos="fade-up">
+        <div class="footer-container" data-aos="fade-up" data-aos-duration="1500">
             <div class="download-section">
                 <p>Start your Fashion Journey on</p>
                 <a href="https://bit.ly/3ro3anT"><img src="images/googleplaysvg.svg" alt="Google Play"></a>
@@ -144,14 +144,18 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom" data-aos="fade-up">
+        <div class="footer-bottom" data-aos="fade-up" data-aos-duration="1500">
             <p>&copy; 2024 Symmatric. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-in-out',
+        });
     </script>
     <script src="squizscript.js"></script> <!-- Link to your Squiz JS file -->
 </body>

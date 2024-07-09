@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
             text: "Why aren't you an influencer yet?",
             options: ['Option 1', 'Option 2', 'Option 3']
         }
-        // Add more questions as needed
     ];
 
     let currentQuestionIndex = 0;
