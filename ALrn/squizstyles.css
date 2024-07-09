@@ -326,7 +326,7 @@ footer.button:hover {
 
 .squiz-progress-line {
     width: 17rem;
-    height: 2px;
+    height: 0.125rem;
     background-color: #ccc;
     transition: background-color 0.3s ease;
 }
