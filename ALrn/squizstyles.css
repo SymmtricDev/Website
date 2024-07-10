@@ -290,7 +290,7 @@ footer.button:hover {
 }
 
 /* Squiz Quiz Section */
- .squiz-quiz-section {
+.squiz-quiz-section {
     background-color: #fff;
     padding: 4rem 0;
     text-align: center;
@@ -320,10 +320,6 @@ footer.button:hover {
     transition: background-color 0.3s ease;
 }
 
-.squiz-progress-dot.active {
-    background-color: #98021D;
-}
-
 .squiz-progress-line {
     width: 17rem;
     height: 0.125rem;
@@ -331,7 +327,7 @@ footer.button:hover {
     transition: background-color 0.3s ease;
 }
 
-.squiz-progress-dot.active + .squiz-progress-line {
+.squiz-progress-dot.active, .squiz-progress-line.active {
     background-color: #98021D;
 }
 
@@ -372,30 +368,35 @@ footer.button:hover {
 }
 
 .squiz-quiz-options {
-    width: 50%;
-    padding: 0.5rem;
+    width: 100%;
+    padding: 0.75rem;
     font-size: 1rem;
     margin-bottom: 1.5rem;
     border: none;
     border-radius: 5px;
+    text-align: center;
 }
 
 .squiz-quiz-buttons {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 100%;
+    max-width: 400px;
     margin: 0 auto;
 }
 
-.squiz-quiz-back, .squiz-quiz-next {
-    background-color: #b40e1d;
+.squiz-quiz-back, .squiz-quiz-next, .squiz-quiz-finish{
+    background-color: #940e19;
     color: #fff;
     padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 45px;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .squiz-quiz-back:hover, .squiz-quiz-next:hover {
@@ -449,6 +450,9 @@ footer.button:hover {
         width: 90%;
         margin-bottom: 0.5rem;
     }
+    .squiz-progress-line {
+        width: 10rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -479,7 +483,11 @@ footer.button:hover {
         margin-bottom: 0.5rem;
         font-size: 0.9rem;
     }
+    .squiz-progress-line {
+        width: 7rem;
+    }
 }
+
 
 /* Loop Section */
 .loop-section {
