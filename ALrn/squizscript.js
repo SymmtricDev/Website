@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // AJAX request to save selectedOptions to MySQL database
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', '/save-quiz-results', true); // Assuming /save-quiz-results is your endpoint
+        xhr.open('POST', 'http://35.154.84.244:8000/save-quiz-results', true); // Assuming /save-quiz-results is your endpoint
         xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
