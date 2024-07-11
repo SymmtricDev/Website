@@ -733,6 +733,7 @@ button:hover {
         padding: 20px;
         background-size: cover;
         background: none;
+        background-color: #fff;
     }
 
     .feedback-info h2 {
