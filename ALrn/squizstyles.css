@@ -288,7 +288,6 @@ footer.button:hover {
     border-top-right-radius: 4%; /* Adjust the border-radius to make it less round */
     z-index: -1;
 }
-
 /* Squiz Quiz Section */
 .squiz-quiz-section {
     background-color: #fff;
@@ -321,7 +320,7 @@ footer.button:hover {
 }
 
 .squiz-progress-line {
-    width: 17rem;
+    width: 14rem;
     height: 0.125rem;
     background-color: #ccc;
     transition: background-color 0.3s ease;
@@ -367,13 +366,19 @@ footer.button:hover {
     margin-bottom: 1.5rem;
 }
 
-.squiz-quiz-options {
+.squiz-quiz-options, .email-input {
     width: 100%;
     padding: 0.75rem;
     font-size: 1rem;
     margin-bottom: 1.5rem;
     border: none;
     border-radius: 5px;
+    text-align: center;
+}
+
+.email-input {
+    display: block;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -438,7 +443,7 @@ footer.button:hover {
     .squiz-quiz-content p {
         font-size: 1rem;
     }
-    .squiz-quiz-options {
+    .squiz-quiz-options, .email-input {
         width: 100%;
     }
     .squiz-quiz-buttons {
@@ -468,7 +473,7 @@ footer.button:hover {
     .squiz-quiz-content p {
         font-size: 0.9rem;
     }
-    .squiz-quiz-options {
+    .squiz-quiz-options, .email-input {
         width: 100%;
         font-size: 0.9rem;
         padding: 0.4rem;

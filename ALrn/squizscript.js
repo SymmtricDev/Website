@@ -1,38 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
     const questions = [
         {
-            image: 'images/squizq1bg.svg',
-            question: 'Does the person next to you looks & dresses better than you?',
+            image: 'images/squizq5bg.svg',
+            question: 'Please enter your email:',
             text: '',
-            options: ['No, I look the best', 'I was Mr/Ms farewell in my school', 'I was diva at my college',"I don’t care","Yes they do","I wish I knew how to dress better"]
+            options: []
         },
         {
-            image: 'images/squizbg2.svg', // Placeholder image for Question 2
-            question: 'Do you ever look at the influencers & think you can be one of them?',
+            image: 'images/symsqbg.jpg',
+            question: 'Does the person next to you look & dress better than you?',
+            text: '',
+            options: ['No, I look the best', 'I was Mr/Ms farewell in my school', 'I was diva at my college', "I don’t care", "Yes they do", "I wish I knew how to dress better"]
+        },
+        {
+            image: 'images/squizbg2.svg',
+            question: 'Do you ever look at influencers & think you can be one of them?',
             text: '',
             options: ['Yes, I do', 'No, I do not', 'If I get the opportunity why not']
         },
         {
-            image: 'images/squizq3bg.svg', // Placeholder image for Question 2
+            image: 'images/squizq3bg.svg',
             question: 'Do you want to be an influencer on Instagram?',
             text: '',
-            options: ['Yes, I want to be an influencer on Instagram', 'Fashion is not that important to me', 'No, I’m just happy dressing to college everyday']
+            options: ['Yes, I want to be an influencer on Instagram', 'Fashion is not that important to me', 'No, I’m just happy dressing to college every day']
         },
         {
-            image: 'images/squizq4bg.svg', // Placeholder image for Question 2
+            image: 'images/squizq4bg.svg',
             question: "Why aren't you an influencer yet?",
             text: "",
             options: ['It’s hard to crack social media', 'I want to focus on another career', 'To buy clothes to be an influencer is too much']
         },
         {
-            image: 'images/squizq5bg.svg', // Placeholder image for Question 2
+            image: 'images/squizq5bg.svg',
             question: 'Thank you for taking our Quiz!',
             text: "Please choose one of the following.",
-            options: ['I want to be a local influencer', 'I love my fashion & want to share it', 'I want to be a global influencer','I want to look good for myself when I go to buy groceries']
+            options: ['I want to be a local influencer', 'I love my fashion & want to share it', 'I want to be a global influencer', 'I want to look good for myself when I go to buy groceries']
         }
     ];
 
     let currentQuestionIndex = 0;
+    let userEmail = '';
 
     const quizImage = document.querySelector('.squiz-quiz-image');
     const quizContent = document.querySelector('.squiz-quiz-content');
@@ -46,9 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateQuiz() {
         const currentQuestion = questions[currentQuestionIndex];
         quizImage.src = currentQuestion.image;
-        quizContent.querySelector('h2').textContent = currentQuestion.question;
-        quizContent.querySelector('p').textContent = currentQuestion.text;
-        quizOptions.innerHTML = currentQuestion.options.map(option => `<option>${option}</option>`).join('');
+        if (currentQuestionIndex === 0) {
+            quizContent.querySelector('h2').textContent = currentQuestion.question;
+            quizContent.querySelector('p').innerHTML = '<input type="email" class="email-input" placeholder="Enter your email">';
+            quizOptions.style.display = 'none';
+        } else {
+            quizContent.querySelector('h2').textContent = currentQuestion.question;
+            quizContent.querySelector('p').textContent = currentQuestion.text;
+            quizOptions.style.display = 'block';
+            quizOptions.innerHTML = currentQuestion.options.map(option => `<option>${option}</option>`).join('');
+        }
         updateProgressDots();
 
         if (currentQuestionIndex === questions.length - 1) {
@@ -71,12 +85,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     nextButton.addEventListener('click', () => {
-        const selectedOption = quizOptions.querySelector('option:checked').value;
-        selectedOptions[currentQuestionIndex] = selectedOption;
+        if (currentQuestionIndex === 0) {
+            const emailInput = document.querySelector('.email-input').value;
+            if (emailInput) {
+                userEmail = emailInput;
+                currentQuestionIndex++;
+                updateQuiz();
+            } else {
+                alert('Please enter your email.');
+            }
+        } else {
+            const selectedOption = quizOptions.querySelector('option:checked').value;
+            selectedOptions[currentQuestionIndex - 1] = selectedOption;
 
-        if (currentQuestionIndex < questions.length - 1) {
-            currentQuestionIndex++;
-            updateQuiz();
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                updateQuiz();
+            }
         }
     });
 
@@ -89,12 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     finishButton.addEventListener('click', () => {
         const selectedOption = quizOptions.querySelector('option:checked').value;
-        selectedOptions[currentQuestionIndex] = selectedOption;
+        selectedOptions[currentQuestionIndex - 1] = selectedOption;
 
         // Print the selected options to the console
         console.log('Selected options:', selectedOptions);
 
-        // AJAX request to save selectedOptions to MySQL database
+        // AJAX request to save selectedOptions and email to MySQL database
         const xhr = new XMLHttpRequest();
         xhr.open('POST', 'http://35.154.84.244:8000/save-quiz-results', true); // Assuming /save-quiz-results is your endpoint
         xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
@@ -103,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Quiz results saved successfully!');
             }
         };
-        xhr.send(JSON.stringify({ results: selectedOptions }));
+        xhr.send(JSON.stringify({ email: userEmail, results: selectedOptions }));
     });
 
     // Initialize the quiz
