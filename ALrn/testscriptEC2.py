@@ -1,8 +1,9 @@
 # from flask import Flask, request, jsonify
 # import mysql.connector
+# from flask_cors import CORS
 
 # app = Flask(__name__)
-
+# CORS(app)
 # # MySQL database connection configuration
 # conn = mysql.connector.connect(
 #     host="symmatric-new.cs2fns1gjtt7.ap-south-1.rds.amazonaws.com",
