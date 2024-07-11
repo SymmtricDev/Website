@@ -1,37 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
     const questions = [
         {
-            image: 'images/squizq5bg.svg',
-            question: 'Please enter your email:',
+            image: 'images/symsqbg.svg',
+            question: 'Before starting the Squiz please enter your email address to receive updates.',
             text: '',
             options: []
         },
         {
-            image: 'images/symsqbg.jpg',
+            image: 'images/symsqbg.svg',
             question: 'Does the person next to you look & dress better than you?',
             text: '',
             options: ['No, I look the best', 'I was Mr/Ms farewell in my school', 'I was diva at my college', "I don’t care", "Yes they do", "I wish I knew how to dress better"]
         },
         {
-            image: 'images/squizbg2.svg',
+            image: 'images/symsqbg.svg',
             question: 'Do you ever look at influencers & think you can be one of them?',
             text: '',
             options: ['Yes, I do', 'No, I do not', 'If I get the opportunity why not']
         },
         {
-            image: 'images/squizq3bg.svg',
+            image: 'images/symsqbg.svg',
             question: 'Do you want to be an influencer on Instagram?',
             text: '',
             options: ['Yes, I want to be an influencer on Instagram', 'Fashion is not that important to me', 'No, I’m just happy dressing to college every day']
         },
         {
-            image: 'images/squizq4bg.svg',
+            image: 'images/symsqbg.svg',
             question: "Why aren't you an influencer yet?",
             text: "",
             options: ['It’s hard to crack social media', 'I want to focus on another career', 'To buy clothes to be an influencer is too much']
         },
         {
-            image: 'images/squizq5bg.svg',
+            image: 'images/symsqbg.svg',
             question: 'Thank you for taking our Quiz!',
             text: "Please choose one of the following.",
             options: ['I want to be a local influencer', 'I love my fashion & want to share it', 'I want to be a global influencer', 'I want to look good for myself when I go to buy groceries']

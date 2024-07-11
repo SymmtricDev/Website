@@ -315,7 +315,7 @@ footer.button:hover {
     height: 20px;
     border-radius: 50%;
     background-color: #ccc;
-    margin: 0 10px;
+    /* margin: 0 10px; */
     transition: background-color 0.3s ease;
 }
 
@@ -334,7 +334,6 @@ footer.button:hover {
     background-color: #fff;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 1202px;
     position: relative;
@@ -390,7 +389,7 @@ footer.button:hover {
     margin: 0 auto;
 }
 
-.squiz-quiz-back, .squiz-quiz-next, .squiz-quiz-finish{
+.squiz-quiz-back, .squiz-quiz-next, .squiz-quiz-finish {
     background-color: #940e19;
     color: #fff;
     padding: 0.75rem 1.5rem;
