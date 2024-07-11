@@ -732,6 +732,7 @@ button:hover {
     .feedback-info {
         padding: 20px;
         background-size: cover;
+        background: none;
     }
 
     .feedback-info h2 {
