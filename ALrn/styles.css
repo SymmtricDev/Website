@@ -1248,6 +1248,8 @@ footer {
     }
     .hero-text p {
         font-size: 1rem;
+        margin-left: 72px;
+        margin-right: 72px;
     }
     .hero .btn {
         font-size: 0.8rem;
