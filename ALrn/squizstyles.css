@@ -315,7 +315,6 @@ footer.button:hover {
     height: 20px;
     border-radius: 50%;
     background-color: #ccc;
-    /* margin: 0 10px; */
     transition: background-color 0.3s ease;
 }
 
@@ -429,33 +428,75 @@ footer.button:hover {
 }
 
 /* Media Queries */
-@media (max-width: 1200px) {
-    .squiz-quiz-container {
-        max-width: 100%;
+/* Media Queries */
+@media (max-width: 900px) {
+    .squiz-progress, .squiz-progress-dot, .squiz-progress-line {
+        display: none;
     }
 }
 
 @media (max-width: 768px) {
+    .squiz-quiz-content {
+        max-width: 90%;
+        padding: 1rem;
+    }
     .squiz-quiz-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     .squiz-quiz-content p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .squiz-quiz-options, .email-input {
         width: 100%;
     }
     .squiz-quiz-buttons {
-        width: 100%;
+        width: 90%;
         flex-direction: column;
         align-items: center;
     }
     .squiz-quiz-back, .squiz-quiz-next {
-        width: 90%;
+        width: 70%;
+        padding: 0.4rem 0.8rem;
         margin-bottom: 0.5rem;
+        font-size: 0.9rem;
     }
-    .squiz-progress-line {
-        width: 10rem;
+    .squiz-progress, .squiz-progress-dot, .squiz-progress-line {
+        display: none;
+    }
+    .squiz-quiz-card {
+        max-width: 100%;
+        margin: 0 1rem; /* Adding margin to ensure card has some space from the edges */
+    }
+    .squiz-quiz-image {
+        width: 100%;
+        height: auto;
+    }
+    .squiz-quiz-section {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .squiz-quiz-content {
+        max-width: 85%;
+        padding: 1rem;
+    }
+    .squiz-quiz-content h2 {
+        font-size: 1.1rem;
+    }
+    .squiz-quiz-content p {
+        font-size: 0.8rem;
+    }
+    .squiz-quiz-buttons {
+        width: 85%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .squiz-quiz-back, .squiz-quiz-next {
+        width: 60%;
+        padding: 0.3rem 0.6rem;
+        margin-bottom: 0.4rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -464,31 +505,81 @@ footer.button:hover {
         padding: 2rem 0;
     }
     .squiz-quiz-content {
-        padding: 1rem;
+        max-width: 80%;
+        padding: 0.5rem;
     }
     .squiz-quiz-content h2 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .squiz-quiz-content p {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
     .squiz-quiz-options, .email-input {
         width: 100%;
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         padding: 0.4rem;
     }
     .squiz-quiz-buttons {
-        width: 100%;
+        width: 80%;
         flex-direction: column;
     }
     .squiz-quiz-back, .squiz-quiz-next {
+        width: 60%;
+        padding: 0.4rem 0.5rem;
+        margin-bottom: 0.3rem;
+        font-size: 0.7rem;
+    }
+    .squiz-progress, .squiz-progress-dot, .squiz-progress-line {
+        display: none;
+    }
+    .squiz-quiz-card {
+        max-width: 100%;
+        margin: 0 1rem;
+    }
+    .squiz-quiz-image {
         width: 100%;
-        padding: 0.75rem 1rem;
-        margin-bottom: 0.5rem;
+        height: auto;
+    }
+}
+
+/* Additional Media Queries */
+@media (max-width: 375px) {
+    .squiz-quiz-section {
+        padding: 1.5rem 0;
+    }
+    .squiz-quiz-content {
+        max-width: 75%;
+        padding: 0.5rem;
+    }
+    .squiz-quiz-content h2 {
         font-size: 0.9rem;
     }
-    .squiz-progress-line {
-        width: 7rem;
+    .squiz-quiz-content p {
+        font-size: 0.6rem;
+    }
+    .squiz-quiz-options, .email-input {
+        font-size: 0.6rem;
+        padding: 0.3rem;
+    }
+    .squiz-quiz-buttons {
+        width: 75%;
+        flex-direction: column;
+    }
+    .squiz-quiz-back, .squiz-quiz-next {
+        width: 55%;
+        padding: 0.3rem 0.4rem;
+        font-size: 0.6rem;
+    }
+    .squiz-progress, .squiz-progress-dot, .squiz-progress-line {
+        display: none;
+    }
+    .squiz-quiz-card {
+        max-width: 100%;
+        margin: 0 1rem;
+    }
+    .squiz-quiz-image {
+        width: 100%;
+        height: auto;
     }
 }
 
