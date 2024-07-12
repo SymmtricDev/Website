@@ -28,41 +28,42 @@ header {
     padding: 1rem 0;
     width: 100%;
     display: flex;
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space between logo and nav */
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Ensure relative positioning for absolute children */
 }
 
 header .logo {
     display: flex;
-    align-items: center; /* Center logo image and text vertically */
+    align-items: center;
 }
 
 header .logo img {
     width: 80px;
-    margin-right: 0rem; /* Adjust margin to move the image closer to the text */
+    margin-right: 0;
     margin-left: -1.1rem;
 }
 
 header .logo-text {
     color: #fff;
-    margin-left: 0; /* Ensure no extra left margin */
+    margin-left: 0;
 }
 
 header .logo-text h1 {
     font-size: 2rem;
-    margin: 0; /* Remove default margin */
+    margin: 0;
 }
 
 header nav {
-    margin-left: auto; /* Push nav to the far right */
+    margin-left: auto;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
     gap: 1rem;
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    margin: 0;
+    padding: 0;
 }
 
 header nav ul li a {
@@ -74,6 +75,117 @@ header nav ul li a {
 
 header nav ul li a:hover {
     color: #b40e1d;
+}
+
+/* Burger Menu */
+.burger-menu {
+    display: none; /* Initially hide for larger screens */
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.burger-menu.open div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-menu.open div:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile Navigation Menu */
+.mobile-nav {
+    display: none; /* Initially hide for larger screens */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 100; /* Ensure it's above other content */
+}
+
+.mobile-nav.open {
+    display: flex; /* Show when open */
+}
+
+.mobile-nav ul {
+    flex-direction: column;
+}
+
+.mobile-nav ul li {
+    margin: 0.5rem 0;
+}
+/* Media Queries for Phones */
+@media (max-width: 600px) {
+    header {
+        position: relative;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block; /* Ensure burger menu is displayed */
+        cursor: pointer;
+    }
+
+    .burger-menu div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .burger-menu.open div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger-menu.open div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.open div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mobile-nav ul {
+        flex-direction: column;
+    }
+
+    .mobile-nav.open {
+        display: flex;
+    }
+
+    .mobile-nav ul li {
+        margin: 0.5rem 0;
+    }
 }
 
 /* Hero Section */
@@ -150,6 +262,36 @@ header nav ul li a:hover {
     /* margin-right: -9rem; */
     margin-top: 2rem;
     margin-bottom: -6px;
+}
+/* Media Queries for Phones */
+@media (max-width: 600px) {
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        padding-bottom: 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .hero .btn {
+        margin-top: 1rem;
+    }
+
+    .hero-image img {
+        width: 80%;
+        max-width: 300px;
+    }
 }
 
 /* Discover Section */

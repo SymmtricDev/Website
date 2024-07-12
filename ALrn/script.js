@@ -37,3 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
         burger.classList.toggle('active');
     });
 });
+function toggleMenu() {
+    const burgerMenu = document.querySelector('.burger-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+    burgerMenu.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+}

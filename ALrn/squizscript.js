@@ -84,15 +84,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
     nextButton.addEventListener('click', () => {
         if (currentQuestionIndex === 0) {
             const emailInput = document.querySelector('.email-input').value;
-            if (emailInput) {
+            if (emailInput && validateEmail(emailInput)) {
                 userEmail = emailInput;
                 currentQuestionIndex++;
                 updateQuiz();
             } else {
-                alert('Please enter your email.');
+                alert('Please enter a valid email address.');
             }
         } else {
             const selectedOption = quizOptions.querySelector('option:checked').value;
