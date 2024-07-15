@@ -61,7 +61,22 @@ document.addEventListener('DOMContentLoaded', () => {
             quizContent.querySelector('h2').textContent = currentQuestion.question;
             quizContent.querySelector('p').textContent = currentQuestion.text;
             quizOptions.style.display = 'block';
-            quizOptions.innerHTML = currentQuestion.options.map(option => `<option>${option}</option>`).join('');
+            const choicesInstance = new Choices(quizOptions, {
+                searchEnabled: false,
+                itemSelectText: '',
+                removeItemButton: false,
+                shouldSort: false,
+                classNames: {
+                    containerOuter: 'choices choices__inner'
+                }
+            });
+            choicesInstance.clearStore();
+            choicesInstance.setChoices(
+                currentQuestion.options.map(option => ({ value: option, label: option })),
+                'value',
+                'label',
+                false
+            );
         }
         updateProgressDots();
 
@@ -100,12 +115,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Please enter a valid email address.');
             }
         } else {
-            const selectedOption = quizOptions.querySelector('option:checked').value;
-            selectedOptions[currentQuestionIndex - 1] = selectedOption;
+            const selectedOption = quizOptions.querySelector('.choices__item--selectable.is-selected')?.dataset.value;
+            if (selectedOption) {
+                selectedOptions[currentQuestionIndex - 1] = selectedOption;
 
-            if (currentQuestionIndex < questions.length - 1) {
-                currentQuestionIndex++;
-                updateQuiz();
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    updateQuiz();
+                }
+            } else {
+                alert('Please select an option.');
             }
         }
     });
@@ -118,47 +137,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     finishButton.addEventListener('click', () => {
-        const selectedOption = quizOptions.querySelector('option:checked').value;
-        selectedOptions[currentQuestionIndex - 1] = selectedOption;
+        const selectedOption = quizOptions.querySelector('.choices__item--selectable.is-selected')?.dataset.value;
+        if (selectedOption) {
+            selectedOptions[currentQuestionIndex - 1] = selectedOption;
 
-        // Print the selected options to the console
-        console.log('Selected options:', selectedOptions);
+            // Print the selected options to the console
+            console.log('Selected options:', selectedOptions);
 
-        // AJAX request to save selectedOptions and email to MySQL database
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://35.154.84.244:8000/save-quiz-results', true); // Assuming /save-quiz-results is your endpoint
-        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                alert('Quiz results saved successfully!');
-            }
-        };
-        xhr.send(JSON.stringify({ email: userEmail, results: selectedOptions }));
+            // AJAX request to save selectedOptions and email to MySQL database
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://35.154.84.244:8000/save-quiz-results', true); // Assuming /save-quiz-results is your endpoint
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    alert('Quiz results saved successfully!');
+                }
+            };
+            xhr.send(JSON.stringify({ email: userEmail, results: selectedOptions }));
+        } else {
+            alert('Please select an option.');
+        }
     });
 
     // Initialize the quiz
     updateQuiz();
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const fadeElements = document.querySelectorAll('.fade-in-up');
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('appear');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    fadeElements.forEach(el => {
-        observer.observe(el);
-    });
 });
