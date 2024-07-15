@@ -67,7 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 removeItemButton: false,
                 shouldSort: false,
                 classNames: {
-                    containerOuter: 'choices choices__inner'
+                    containerOuter: 'choices',
+                    containerInner: 'choices__inner',
+                    list: 'choices__list',
+                    listDropdown: 'choices__list--dropdown',
+                    item: 'choices__item',
+                    itemSelectable: 'choices__item--selectable',
+                    selectedState: 'is-selected',
+                    highlightedState: 'is-highlighted',
                 }
             });
             choicesInstance.clearStore();
