@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const backButton = document.querySelector('.squiz-quiz-back');
     const finishButton = document.querySelector('.squiz-quiz-finish');
     const selectedOptions = [];
+    let choicesInstance;
 
     function updateQuiz() {
         const currentQuestion = questions[currentQuestionIndex];
@@ -61,7 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
             quizContent.querySelector('h2').textContent = currentQuestion.question;
             quizContent.querySelector('p').textContent = currentQuestion.text;
             quizOptions.style.display = 'block';
-            const choicesInstance = new Choices(quizOptions, {
+            quizOptions.innerHTML = ''; // Clear any previous options
+            if (choicesInstance) {
+                choicesInstance.destroy(); // Destroy previous instance
+            }
+            choicesInstance = new Choices(quizOptions, {
                 searchEnabled: false,
                 itemSelectText: '',
                 removeItemButton: false,
@@ -77,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     highlightedState: 'is-highlighted',
                 }
             });
-            choicesInstance.clearStore();
             choicesInstance.setChoices(
                 currentQuestion.options.map(option => ({ value: option, label: option })),
                 'value',
@@ -122,10 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Please enter a valid email address.');
             }
         } else {
-            const selectedOption = quizOptions.querySelector('.choices__item--selectable.is-selected')?.dataset.value;
+            const selectedOption = choicesInstance.getValue(true);
             if (selectedOption) {
                 selectedOptions[currentQuestionIndex - 1] = selectedOption;
-
                 if (currentQuestionIndex < questions.length - 1) {
                     currentQuestionIndex++;
                     updateQuiz();
@@ -144,10 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     finishButton.addEventListener('click', () => {
-        const selectedOption = quizOptions.querySelector('.choices__item--selectable.is-selected')?.dataset.value;
+        const selectedOption = choicesInstance.getValue(true);
         if (selectedOption) {
             selectedOptions[currentQuestionIndex - 1] = selectedOption;
-
             // Print the selected options to the console
             console.log('Selected options:', selectedOptions);
 
@@ -168,4 +170,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize the quiz
     updateQuiz();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const fadeElements = document.querySelectorAll('.fade-in-up');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    fadeElements.forEach(el => {
+        observer.observe(el);
+    });
 });

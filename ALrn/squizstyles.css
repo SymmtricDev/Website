@@ -303,12 +303,12 @@ footer.button:hover {
 /* Split Background with Longer, Less Rounded Maroon Bottom Section */
 
 /* Global Styles */
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
-}
+} */
 
 .squiz-quiz-section {
     background-color: #fff;
@@ -411,7 +411,6 @@ body {
 .choices__inner {
     height: 3rem;
     border: 2px solid #007BFF;
-    border-radius: 10px;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     color: #333;
@@ -422,20 +421,27 @@ body {
     outline: none; /* Remove the outline */
     text-align: center;
     border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%; /* Adjust the width to make the dropdown slightly smaller */
+    max-width: 350px; /* Set a max-width to ensure it doesn't get too wide */
+    margin: 0 auto; /* Center the dropdown */
+    
 }
 
 .choices__inner:focus-within {
     border-color: #0056b3;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     outline: none; /* Ensure outline is removed */
-    text-align: center;
+    
 }
 
 .choices__list--single .choices__item {
-    line-height: 1.8rem;
+    line-height: 1.4rem;
     padding-left: 0.75rem;
     font-size: medium;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .choices__list--dropdown {
@@ -444,8 +450,8 @@ body {
     box-shadow: none; /* Remove the shadow */
     overflow: hidden;
     position: absolute;
-    width: 80%;
-    max-width: 400px;
+    width: 70%; /* Adjust the width to make the dropdown slightly smaller */
+    max-width: 350px; /* Set a max-width to ensure it doesn't get too wide */
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -461,42 +467,47 @@ body {
     font-size: 1rem;
     font-family: 'Arial', sans-serif;
     cursor: pointer;
-    color: black; /* Set text color to white */
-    text-align: center;
+    color: black; /* Set text color to black */
+    text-align: center; /* Ensure the text is centered */
 }
 
 .choices__list--dropdown .choices__item--selectable:last-child {
     border-bottom: none;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .choices__list--dropdown .choices__item--selectable:hover {
     background: #4B0000;
     color: black;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted {
     background: #4B0000;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
     color: black;
 }
 
 .choices__list--dropdown .choices__item--selectable.is-selected {
-    background: #4B0000;
-    text-align: center;
+    background: #98021D;
+    text-align: center; /* Ensure the text is centered */
     color: white;
+}
+.choices__list--dropdown .choices__item--selectable.is-selected:hover {
+    background: #98021D;
+    text-align: center; /* Ensure the text is centered */
+    color: black;
 }
 
 .choices__list--dropdown .choices__item--selectable.is-disabled {
     color: black;
     cursor: not-allowed;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .choices__list--dropdown .choices__item--selectable.is-disabled:hover {
     background: none;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .choices__list--dropdown .choices__item--selectable::after {
@@ -506,17 +517,17 @@ body {
     margin-left: 10px;
     color: black; /* Ensure checkmark is visible */
     visibility: hidden;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .choices__list--dropdown .choices__item--selectable.is-selected::after {
     visibility: visible;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .choices__input {
     display: none;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .choices__button {
@@ -525,12 +536,12 @@ body {
     font-size: 1.2rem;
     color: #007BFF;
     cursor: pointer;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .choices__button:hover {
     color: #0056b3;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .squiz-quiz-buttons {
@@ -539,7 +550,7 @@ body {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .squiz-quiz-back,
@@ -556,7 +567,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .squiz-quiz-back:hover,
@@ -566,24 +577,28 @@ body {
 
 .squiz-quiz-footer {
     margin-top: 2rem;
-    text-align: center;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .squiz-quiz-footer p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-}   
+    text-align: center; /* Ensure the text is centered */
+}
 
 .squiz-social-icons a {
     color: #333;
     margin: 0 0.5rem;
     font-size: 1.5rem;
     transition: color 0.3s ease;
+    text-align: center; /* Ensure the text is centered */
 }
 
 .squiz-social-icons a:hover {
     color: #b40e1d;
+    text-align: center; /* Ensure the text is centered */
 }
+
 
 /* Media Queries */
 @media (max-width: 900px) {
