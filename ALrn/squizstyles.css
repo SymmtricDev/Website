@@ -395,7 +395,7 @@ footer.button:hover {
     width: 90%;
     max-width: 500px;
     border: 1px solid #ccc;
-    border-radius: 2rem;
+    border-radius: 5px;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
@@ -439,7 +439,6 @@ footer.button:hover {
 
 .choices__list--single .choices__item {
     line-height: 1.4rem;
-    padding-left: 0.75rem;
     font-size: medium;
     text-align: center; /* Ensure the text is centered */
 }
@@ -599,9 +598,7 @@ footer.button:hover {
     text-align: center; /* Ensure the text is centered */
 }
 /* Media Queries squiz drop-down */
-/* Media Queries for Laptops */
-/* Media Queries for Laptops */
-/* Media Queries for Laptops */
+
 @media (max-width: 1200px) {
     .choices__inner {
         width: 70%;
@@ -952,7 +949,41 @@ footer.button:hover {
     .loop-section .container {
         max-width: 100%;
     }
+    .choices__inner {
+        width: 70%;
+        font-size: 0.9rem;
+    }
+
+    .choices__list--dropdown {
+        width: 80%;
+        z-index: 1000; /* Ensure the dropdown appears above other elements */
+    }
+
+    .choices__list--dropdown .choices__item--selectable {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .squiz-quiz-buttons {
+        max-width: 350px;
+    }
+
+    .squiz-quiz-back,
+    .squiz-quiz-next,
+    .squiz-quiz-finish {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .squiz-quiz-footer p {
+        font-size: 1rem;
+    }
+
+    .squiz-social-icons a {
+        font-size: 1.2rem;
+    }
 }
+
 
 @media (max-width: 768px) {
     .squiz-quiz-content h2 {
@@ -965,8 +996,17 @@ footer.button:hover {
         width: 100%;
     }
     .squiz-quiz-buttons {
-        width: 100%;
-        flex-direction: column;
+        max-width: 300px;
+        flex-direction: row;
+    }
+
+    .squiz-quiz-back,
+    .squiz-quiz-next,
+    .squiz-quiz-finish {
+        width: auto;
+        margin-bottom: 0; /* Remove margin-bottom to align in a row */
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
     }
     .squiz-quiz-back, .squiz-quiz-next {
         width: 100%;
@@ -997,7 +1037,18 @@ footer.button:hover {
         font-size: 0.9rem;
     }
     .squiz-quiz-buttons {
-        width: 100%;
+        max-width: 250px;
+        flex-direction: row; /* Align buttons in a row */
+        justify-content: space-between; /* Space buttons evenly */
+    }
+
+    .squiz-quiz-back,
+    .squiz-quiz-next,
+    .squiz-quiz-finish {
+        width: auto; /* Adjust width to auto for proper alignment */
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        margin-bottom: 0; /* Remove margin-bottom to align in a row */
     }
     .loop-section h2 {
         font-size: 1.2rem;
@@ -1010,6 +1061,47 @@ footer.button:hover {
     }
 }
 
+@media (max-width: 375px) {
+    .squiz-quiz-section {
+        padding: 1.5rem 0;
+    }
+    .squiz-quiz-content {
+        max-width: 75%;
+        padding: 0.5rem;
+    }
+    .squiz-quiz-content h2 {
+        font-size: 0.9rem;
+    }
+    .squiz-quiz-content p {
+        font-size: 0.6rem;
+    }
+    .squiz-quiz-options, .email-input {
+        font-size: 0.6rem;
+        padding: 0.3rem;
+    }
+    .squiz-quiz-buttons {
+        width: 75%;
+        flex-direction: row; /* Change to row to align buttons horizontally */
+        justify-content: space-between; /* Space buttons evenly */
+    }
+    .squiz-quiz-back, .squiz-quiz-next, .squiz-quiz-finish {
+        width: auto; /* Adjust width to auto for proper alignment */
+        padding: 0.3rem 0.4rem;
+        font-size: 0.6rem;
+        margin-bottom: 0; /* Remove margin-bottom to align in a row */
+    }
+    .squiz-progress, .squiz-progress-dot, .squiz-progress-line {
+        display: none;
+    }
+    .squiz-quiz-card {
+        max-width: 100%;
+        margin: 0 1rem;
+    }
+    .squiz-quiz-image {
+        width: 100%;
+        height: auto;
+    }
+}
 
 /* Footer Styles */
 
