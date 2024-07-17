@@ -417,10 +417,10 @@ footer.button:hover {
     background-color: #000;
     padding: 0 0.75rem;
     font-size: 1rem;
-    font-family: 'Arial', sans-serif;
+    font-family: "Abhaya Libre", serif;
     outline: none; /* Remove the outline */
     text-align: center;
-    border-radius: 2rem;
+    /* border-radius: 52.5px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -465,7 +465,7 @@ footer.button:hover {
     border-bottom: 1px solid #e0e0e0;
     transition: background 0.3s, color 0.3s;
     font-size: 1rem;
-    font-family: 'Arial', sans-serif;
+    font-family: "Abhaya Libre", serif;
     cursor: pointer;
     color: black; /* Set text color to black */
     text-align: center; /* Ensure the text is centered */
@@ -512,7 +512,7 @@ footer.button:hover {
 
 .choices__list--dropdown .choices__item--selectable::after {
     content: '\f00c'; /* Font Awesome checkmark */
-    font-family: 'FontAwesome';
+    font-family: "Abhaya Libre", serif;
     display: inline-block;
     margin-left: 10px;
     color: black; /* Ensure checkmark is visible */
@@ -598,8 +598,128 @@ footer.button:hover {
     color: #b40e1d;
     text-align: center; /* Ensure the text is centered */
 }
+/* Media Queries squiz drop-down */
+/* Media Queries for Laptops */
+/* Media Queries for Laptops */
+/* Media Queries for Laptops */
+@media (max-width: 1200px) {
+    .choices__inner {
+        width: 70%;
+        font-size: 0.9rem;
+    }
 
+    .choices__list--dropdown {
+        width: 80%;
+        z-index: 9999; /* Ensure dropdown is on top */
+        position: absolute;
+    }
 
+    .choices__list--dropdown .choices__item--selectable {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .squiz-quiz-buttons {
+        max-width: 350px;
+    }
+
+    .squiz-quiz-back,
+    .squiz-quiz-next,
+    .squiz-quiz-finish {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .squiz-quiz-footer p {
+        font-size: 1rem;
+    }
+
+    .squiz-social-icons a {
+        font-size: 1.2rem;
+    }
+}
+
+/* Media Queries for Tablets */
+@media (max-width: 768px) {
+    .choices__inner {
+        width: 80%;
+        font-size: 0.85rem;
+    }
+
+    .choices__list--dropdown {
+        width: 90%;
+        z-index: 9999; /* Ensure dropdown is on top */
+        position: absolute;
+    }
+
+    .choices__list--dropdown .choices__item--selectable {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .squiz-quiz-buttons {
+        max-width: 300px;
+    }
+
+    .squiz-quiz-back,
+    .squiz-quiz-next,
+    .squiz-quiz-finish {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .squiz-quiz-footer p {
+        font-size: 0.9rem;
+    }
+
+    .squiz-social-icons a {
+        font-size: 1rem;
+    }
+}
+
+/* Media Queries for Mobiles */
+@media (max-width: 480px) {
+    .choices__inner {
+        width: 90%;
+        font-size: 0.75rem;
+    }
+
+    .choices__list--dropdown {
+        width: 95%;
+        z-index: 9999; /* Ensure dropdown is on top */
+        position: fixed; /* Ensure dropdown stays on top */
+        top: 50%; /* Adjust as necessary */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white; /* Ensure dropdown is visible */
+    }
+
+    .choices__list--dropdown .choices__item--selectable {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .squiz-quiz-buttons {
+        max-width: 250px;
+        flex-direction: column;
+    }
+
+    .squiz-quiz-back,
+    .squiz-quiz-next,
+    .squiz-quiz-finish {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .squiz-quiz-footer p {
+        font-size: 0.8rem;
+    }
+
+    .squiz-social-icons a {
+        font-size: 0.9rem;
+    }
+}
 /* Media Queries */
 @media (max-width: 900px) {
     .squiz-progress, .squiz-progress-dot, .squiz-progress-line {
