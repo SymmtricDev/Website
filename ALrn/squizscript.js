@@ -194,3 +194,11 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 });
+// 
+function toggleMenu() {
+    const burgerMenu = document.querySelector('.burger-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+    burgerMenu.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+}
+
