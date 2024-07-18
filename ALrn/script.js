@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Create an XMLHttpRequest object
             const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://35.154.84.244/submit-feedback', true); // Updated to use HTTPS
+            xhr.open('POST', 'http://symmatric.com/submit-feedback', true); // Updated to use HTTPS
             xhr.setRequestHeader('Content-Type', 'application/json');
 
             // Handle response
