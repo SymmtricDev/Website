@@ -13,33 +13,36 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
         return;
     }
 
-    // Send data using fetch
-    fetch('http://35.154.84.244:8000/submit-feedback', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: name,
-            email: email,
-            feedbackType: feedbackType,
-            message: message
-        })
-    })
-    .then(response => {
-        if (response.ok) {
-            alert('Thank you for your feedback!');
-            // Reset the form
-            document.getElementById('feedbackForm').reset();
-        } else {
-            alert('Something went wrong. Please try again later.');
+    // Create an XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://your-backend-server.com/feedback', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    // Handle response
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                // Success
+                alert('Thank you for your feedback!');
+                // Reset the form
+                document.getElementById('feedbackForm').reset();
+            } else {
+                // Error
+                alert('Something went wrong. Please try again later.');
+            }
         }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Something went wrong. Please try again later.');
+    };
+
+    // Send data
+    const data = JSON.stringify({
+        name: name,
+        email: email,
+        feedbackType: feedbackType,
+        message: message
     });
+    xhr.send(data);
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function() {

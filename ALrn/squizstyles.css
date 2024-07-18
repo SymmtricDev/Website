@@ -70,8 +70,8 @@ header nav ul {
 
 header nav ul li a {
     color: #fff;
-    text-decoration: underline #b40e1d;
-    text-underline-offset: 2px;
+    text-decoration: underline #8B0000;
+    text-underline-offset: 5px;
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
