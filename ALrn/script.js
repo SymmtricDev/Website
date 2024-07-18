@@ -13,21 +13,35 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
         return;
     }
 
-    // Form submission logic (e.g., sending data to server)
-    // Here, we'll just log the data to the console  
-    console.log({
-        name: name,
-        email: email,
-        feedbackType: feedbackType,
-        message: message
+    // Send data using fetch
+    fetch('http://35.154.84.244:8000/submit-feedback', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            feedbackType: feedbackType,
+            message: message
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Thank you for your feedback!');
+            // Reset the form
+            document.getElementById('feedbackForm').reset();
+        } else {
+            alert('Something went wrong. Please try again later.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Something went wrong. Please try again later.');
     });
-
-    // Optionally, you can show a confirmation message to the user
-    alert('Thank you for your feedback!');
-    
-    // Reset the form
-    document.getElementById('feedbackForm').reset();
 });
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.nav-links');
