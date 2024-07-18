@@ -155,11 +155,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
             // AJAX request to save selectedOptions and email to MySQL database
             const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://symmatric.com:5000/save-quiz-results', true);
+            xhr.open('POST', 'https://symmatric.com/save-quiz-results', true); // Updated to use HTTPS
             xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     alert('Quiz results saved successfully!');
+                } else if (xhr.readyState === 4) {
+                    alert('Error saving quiz results. Please try again.');
                 }
             };
             xhr.send(JSON.stringify({ email: userEmail, results: selectedOptions }));
@@ -170,6 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize the quiz
     updateQuiz();
+    
     
 });
 

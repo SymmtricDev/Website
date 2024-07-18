@@ -15,7 +15,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
 
     // Create an XMLHttpRequest object
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://symmatric.com:5000/submit-feedback', true);
+    xhr.open('POST', 'https://symmatric.com/submit-feedback', true); // Updated to use HTTPS
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     // Handle response
@@ -42,6 +42,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
     });
     xhr.send(data);
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
