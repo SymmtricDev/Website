@@ -15,7 +15,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
 
     // Create an XMLHttpRequest object
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://your-backend-server.com/feedback', true);
+    xhr.open('POST', 'https://35.154.84.244/submit-feedback', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     // Handle response
