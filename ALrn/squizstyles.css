@@ -79,6 +79,9 @@ header nav ul li a:hover {
 }
 
 /* Burger Menu */
+/* Burger Menu */
+/* Burger Menu */
+/* Burger Menu */
 .burger-menu {
     display: none; /* Initially hide for larger screens */
     cursor: pointer;
@@ -117,6 +120,10 @@ header nav ul li a:hover {
     align-items: center;
     text-align: center;
     z-index: 1000; /* Ensure it's above other content */
+    border-left: 2px solid red; /* Add red border to the left */
+    border-right: 2px solid red; /* Add red border to the right */
+    border-bottom: 2px solid red; /* Add red border to the bottom */
+    box-sizing: border-box; /* Ensure borders are counted in width */
 }
 
 .mobile-nav.open {
@@ -157,6 +164,10 @@ header nav ul li a:hover {
         align-items: center;
         text-align: center;
         z-index: 1000; /* Ensure it's above other content */
+        border-left: 2px solid red; /* Add red border to the left */
+        border-right: 2px solid red; /* Add red border to the right */
+        border-bottom: 2px solid red; /* Add red border to the bottom */
+        box-sizing: border-box; /* Ensure borders are counted in width */
     }
 
     .mobile-nav.open {
@@ -183,8 +194,6 @@ header nav ul li a:hover {
         flex-wrap: wrap;
     }
 }
-
-
 /* Squiz section styles */
 .squiz-section {
     background-color: #940e19;
