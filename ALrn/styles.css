@@ -53,6 +53,7 @@ header .logo-text {
 header .logo-text h1 {
     font-size: 2rem;
     margin: 0;
+    padding-bottom: 8px;
 }
 
 header nav {
@@ -78,6 +79,9 @@ header nav ul li a:hover {
     color: #b40e1d;
 }
 
+/* Burger Menu */
+/* Burger Menu */
+/* Burger Menu */
 /* Burger Menu */
 .burger-menu {
     display: none; /* Initially hide for larger screens */
@@ -117,6 +121,10 @@ header nav ul li a:hover {
     align-items: center;
     text-align: center;
     z-index: 1000; /* Ensure it's above other content */
+    border-left: 2px solid white; /* Add red border to the left */
+    border-right: 2px solid white; /* Add red border to the right */
+    border-bottom: 2px solid white; /* Add red border to the bottom */
+    box-sizing: border-box; /* Ensure borders are counted in width */
 }
 
 .mobile-nav.open {
@@ -169,6 +177,54 @@ header nav ul li a:hover {
 
     .mobile-nav ul li {
         margin: 0.5rem 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* affects header CAREFULLY MODIFY.container {
+        flex-direction: column;
+        align-items: stretch;
+    } */
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .logo img {
+        margin-left: 0;
+    }
+
+    header .logo-text {
+        margin-top: 1rem;
+    }
+    header .logo-text h1 {
+        font-size: 2rem;
+        margin: 0;
+        padding-bottom: 20px;
+        padding-right: 40px;
+    }
+
+    header nav {
+        margin: 1rem 0;
+    }
+
+    .squiz-content {
+        flex-direction: column-reverse;
+    }
+
+    .squiz-image-left, .squiz-image-right {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .squiz-text {
+        padding: 0 1rem;
+    }
+}
+@media (max-width: 992px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
 
