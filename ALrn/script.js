@@ -15,7 +15,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
 
     // Create an XMLHttpRequest object
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://35.154.84.244:5000/submit-feedback', true);
+    xhr.open('POST', 'https://35.154.84.244:5000/submit-feedback', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     // Handle response
@@ -42,7 +42,6 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
     });
     xhr.send(data);
 });
-
 
 
 document.addEventListener('DOMContentLoaded', function() {

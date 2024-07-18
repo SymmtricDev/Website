@@ -152,10 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
             selectedOptions[currentQuestionIndex - 1] = selectedOption;
             // Print the selected options to the console
             console.log('Selected options:', selectedOptions);
-
+    
             // AJAX request to save selectedOptions and email to MySQL database
             const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://35.154.84.244:5000/save-quiz-results', true); // Assuming /save-quiz-results is your endpoint
+            xhr.open('POST', 'https://35.154.84.244:5000/save-quiz-results', true);
             xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
@@ -167,9 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Please select an option.');
         }
     });
-
+    
     // Initialize the quiz
     updateQuiz();
+    
 });
 
 document.addEventListener('DOMContentLoaded', function() {
