@@ -53,6 +53,7 @@ header .logo-text {
 header .logo-text h1 {
     font-size: 2rem;
     margin: 0;
+    padding-bottom: 8px;
 }
 
 header nav {
@@ -120,9 +121,9 @@ header nav ul li a:hover {
     align-items: center;
     text-align: center;
     z-index: 1000; /* Ensure it's above other content */
-    border-left: 2px solid red; /* Add red border to the left */
-    border-right: 2px solid red; /* Add red border to the right */
-    border-bottom: 2px solid red; /* Add red border to the bottom */
+    border-left: 2px solid white; /* Add red border to the left */
+    border-right: 2px solid white; /* Add red border to the right */
+    border-bottom: 2px solid white; /* Add red border to the bottom */
     box-sizing: border-box; /* Ensure borders are counted in width */
 }
 
@@ -164,9 +165,9 @@ header nav ul li a:hover {
         align-items: center;
         text-align: center;
         z-index: 1000; /* Ensure it's above other content */
-        border-left: 2px solid red; /* Add red border to the left */
-        border-right: 2px solid red; /* Add red border to the right */
-        border-bottom: 2px solid red; /* Add red border to the bottom */
+        border-left: 2px solid white; /* Add red border to the left */
+        border-right: 2px solid white; /* Add red border to the right */
+        border-bottom: 2px solid white; /* Add red border to the bottom */
         box-sizing: border-box; /* Ensure borders are counted in width */
     }
 
@@ -275,6 +276,12 @@ header nav ul li a:hover {
 
     header .logo-text {
         margin-top: 1rem;
+    }
+    header .logo-text h1 {
+        font-size: 2rem;
+        margin: 0;
+        padding-bottom: 20px;
+        padding-right: 40px;
     }
 
     header nav {
