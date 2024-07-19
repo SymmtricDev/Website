@@ -50,7 +50,7 @@ def save_quiz_results():
     else:
         return jsonify({"error": "Results field not found in data"}), 400
 
-@app.route('/submit-feedback', methods=['POST'])
+@app.route('/api/submit-feedback', methods=['POST'])
 @cross_origin()
 def submit_feedback():
     data = request.get_json()
