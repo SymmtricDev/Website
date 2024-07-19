@@ -20,7 +20,7 @@ try:
 except mysql.connector.Error as err:
     print(f"Error: {err}")
 
-@app.route('/save-quiz-results', methods=['POST'])
+@app.route('/api/save-quiz-results', methods=['POST'])
 @cross_origin()
 
 def save_quiz_results():

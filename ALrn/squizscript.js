@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // AJAX request to save selectedOptions and email to MySQL database
             const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://35.154.84.244:8000/save-quiz-results', true); // Updated to use HTTPS
+            xhr.open('POST', 'https://symmatric.com/api/save-quiz-results', true); // Updated to use HTTPS
             xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
