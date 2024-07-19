@@ -146,47 +146,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Ensure the DOM is fully loaded before running the script
-        const finishButton = document.getElementById('finishButton');
-        const choicesInstance = {}; // Your logic to get choicesInstance
-        const selectedOptions = [];
-        const userEmail = ''; // Your logic to get the user's email
-        const currentQuestionIndex = 1; // Your logic to get the current question index
-    
-        if (finishButton) {
-            finishButton.addEventListener('click', () => {
-                const selectedOption = choicesInstance.getValue(true);
-                if (selectedOption) {
-                    selectedOptions[currentQuestionIndex - 1] = selectedOption;
-                    // Print the selected options to the console
-                    console.log('Selected options:', selectedOptions);
-    
-                    // AJAX request to save selectedOptions and email to MySQL database
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('POST', 'http://symmatric.com/save-quiz-results', true); // Updated to use HTTPS
-                    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-                    xhr.onreadystatechange = function () {
-                        if (xhr.readyState === 4 && xhr.status === 200) {
-                            alert('Quiz results saved successfully!');
-                        } else if (xhr.readyState === 4) {
-                            alert('Error saving quiz results. Please try again.');
-                        }
-                    };
-                    xhr.send(JSON.stringify({ email: userEmail, results: selectedOptions }));
-                } else {
-                    alert('Please select an option.');
+    finishButton.addEventListener('click', () => {
+        const selectedOption = choicesInstance.getValue(true);
+        if (selectedOption) {
+            selectedOptions[currentQuestionIndex - 1] = selectedOption;
+            // Print the selected options to the console
+            console.log('Selected options:', selectedOptions);
+
+            // AJAX request to save selectedOptions and email to MySQL database
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://35.154.84.244:8000/save-quiz-results', true); // Updated to use HTTPS
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    alert('Quiz results saved successfully!');
+                } else if (xhr.readyState === 4) {
+                    alert('Error saving quiz results. Please try again.');
                 }
-            });
+            };
+            xhr.send(JSON.stringify({ email: userEmail, results: selectedOptions }));
         } else {
-            console.error('Finish button not found.');
+            alert('Please select an option.');
         }
-    
-        // Initialize the quiz
-        updateQuiz();
     });
-    
-    
+
+    // Initialize the quiz
+    updateQuiz();
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -211,11 +196,10 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 });
-// 
+
 function toggleMenu() {
     const burgerMenu = document.querySelector('.burger-menu');
     const mobileNav = document.querySelector('.mobile-nav');
     burgerMenu.classList.toggle('open');
     mobileNav.classList.toggle('open');
 }
-

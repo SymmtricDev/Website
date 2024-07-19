@@ -1,54 +1,39 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const feedbackForm = document.getElementById('feedbackForm');
-    
-    if (feedbackForm) {
-        feedbackForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            // Extract form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const feedbackType = document.getElementById('feedbackType').value;
-            const message = document.getElementById('message').value;
+document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-            // Basic validation
-            if (!name || !email || !feedbackType || !message) {
-                alert('Please fill out all fields.');
-                return;
-            }
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const feedbackType = document.getElementById('feedbackType').value;
+    const message = document.getElementById('message').value;
 
-            // Create an XMLHttpRequest object
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://35.154.84.244/submit-feedback', true); // Updated to use HTTPS
-            xhr.setRequestHeader('Content-Type', 'application/json');
-
-            // Handle response
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        // Success
-                        alert('Thank you for your feedback!');
-                        // Reset the form
-                        document.getElementById('feedbackForm').reset();
-                    } else {
-                        // Error
-                        alert('Something went wrong. Please try again later.');
-                    }
-                }
-            };
-
-            // Send data
-            const data = JSON.stringify({
-                name: name,
-                email: email,
-                feedbackType: feedbackType,
-                message: message
-            });
-            xhr.send(data);
-        });
-    } else {
-        console.error('Feedback form not found.');
+    if (!name || !email || !feedbackType || !message) {
+        alert('Please fill out all fields.');
+        return;
     }
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://symmatric.com/api/submit-feedback', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                alert('Thank you for your feedback!');
+                document.getElementById('feedbackForm').reset();
+            } else {
+                alert('Something went wrong. Please try again later.');
+            }
+        }
+    };
+
+    // Send data
+    const data = JSON.stringify({
+        name: name,
+        email: email,
+        feedbackType: feedbackType,
+        message: message
+    });
+    xhr.send(data);
 });
 
 
