@@ -342,14 +342,10 @@ footer {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 2rem;
-    flex: 0 0 45%;
+    flex: 0 0 45%; /* Ensure each option takes up 45% of the container's width */
     margin: 1rem 0;
     transition: box-shadow 0.3s ease;
 }
-
-/* .quiz-options .option:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-} */
 
 .quiz-options h3 {
     font-size: 1.5rem;
@@ -361,6 +357,7 @@ footer {
     font-size: 1rem;
     color: #555;
 }
+
 
 /*new section for the shapes */
 
@@ -909,7 +906,7 @@ footer.button:hover {
         font-size: 0.8rem;
     }
 }
-
+/* for some reason this one does not take prescedence over the other media query of the same section and the same width, search this media query in the code for context*/
 @media (max-width: 480px) {
     .squiz-quiz-section {
         padding: 2rem 0;
@@ -953,7 +950,7 @@ footer.button:hover {
 }
 
 /* Additional Media Queries */
-@media (max-width: 375px) {
+/* @media (max-width: 375px) {
     .squiz-quiz-section {
         padding: 1.5rem 0;
     }
@@ -991,7 +988,7 @@ footer.button:hover {
         width: 100%;
         height: auto;
     }
-}
+} */
 
 
 
@@ -1142,7 +1139,7 @@ footer.button:hover {
         padding: 1rem;
     }
     .squiz-quiz-content h2 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     .squiz-quiz-content p {
         font-size: 0.9rem;
@@ -1178,10 +1175,10 @@ footer.button:hover {
     }
     .squiz-quiz-content {
         max-width: 75%;
-        padding: 0.5rem;
+        /* padding: 0.5rem; */
     }
     .squiz-quiz-content h2 {
-        font-size: 0.9rem;
+        font-size: 1.3rem;
     }
     .squiz-quiz-content p {
         font-size: 0.6rem;
