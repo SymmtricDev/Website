@@ -906,6 +906,8 @@ footer.button:hover {
         font-size: 0.8rem;
     }
 }
+
+
 /* for some reason this one does not take prescedence over the other media query of the same section and the same width, search this media query in the code for context*/
 @media (max-width: 480px) {
     .squiz-quiz-section {
@@ -917,6 +919,8 @@ footer.button:hover {
     }
     .squiz-quiz-content h2 {
         font-size: 1rem;
+        padding-top: 26%;
+        width: auto;
     }
     .squiz-quiz-content p {
         font-size: 0.7rem;
@@ -944,8 +948,11 @@ footer.button:hover {
         margin: 0 1rem;
     }
     .squiz-quiz-image {
-        width: 100%;
+        width: 151%;
         height: auto;
+        background: url(/ALrn/images/squizrectbg.svg) no-repeat center center;
+        background-size: cover;
+
     }
 }
 
