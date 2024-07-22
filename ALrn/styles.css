@@ -423,7 +423,7 @@ header nav ul li a:hover {
 
 .fashion-images img {
     width: 100%;
-    max-width: 300px;
+    /* max-width: 300px; */
     height: auto;
     border-radius: 10px;
 }
@@ -438,14 +438,14 @@ header nav ul li a:hover {
 }
 
 .fashion-creativity h1 {
-    font-size: 2.5rem;
+    font-size: 4.1rem;
     margin-bottom: 1rem;
     font-weight: bold;
 }
 
-.fashion-creativity p {
-    font-size: 1.2rem;
-    max-width: 800px;
+.fashion-creativity p { 
+    font-size: 1.3rem;
+    max-width: 914px;
     margin: 0 auto;
     margin-bottom: 2rem;
 }
@@ -514,7 +514,7 @@ header nav ul li a:hover {
     border-radius: 37px;
     font-size: 1rem;
     transition: background-color 0.3s ease;
-    margin-left: 33rem;
+    margin-left: 39rem;
 }
 
 .fashion-lives .text-section button:hover {
@@ -623,7 +623,7 @@ header nav ul li a:hover {
 }
 
 .couture-text-section p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     max-width: 480px;
 }
 
