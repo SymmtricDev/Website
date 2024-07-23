@@ -25,7 +25,7 @@ body {
 /* Header */
 header {
     background-color: #000;
-    padding: 1rem 0;
+    padding: 0.5rem 0rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -409,6 +409,128 @@ footer.button:hover {
 }
 
 /* Split Background with Longer, Less Rounded Maroon Bottom Section */
+/* Radio Button Styles */
+/* Radio Options Container */
+/* Container for the radio options */
+/* Container for the radio options */
+/* Container for the radio options */
+/* Container for the radio options */
+/* Container for the radio options */
+/* Container for the radio options */
+/* Container for the radio options */
+.squiz-radio-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px !important; /* Ensure 5 pixels gap between items */
+    margin: 1rem 0; /* Margin for spacing around the container */
+    justify-content: flex-start; /* Align items to the start */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    padding: 1rem; /* Padding to ensure space around the edges */
+    border-radius: 5px; /* Optional: Rounded corners for the container */
+    width: 100%; /* Make the container span the entire width */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* Individual radio option item */
+.squiz-radio-options .radio-option {
+    background-color: rgba(249, 249, 249, 0.8); /* Slightly transparent background to show the image behind */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5rem; /* Smaller padding */
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 calc(50% - 5px) !important; /* Two items per row with 5px gap */
+    max-width: calc(50% - 5px) !important; /* Ensure options do not exceed the width */
+    box-sizing: border-box !important; /* Include padding and border in the element's total width and height */
+    width: 100% !important; /* Make the option span the entire width of the container */
+}
+
+/* Hide the default radio button */
+.squiz-radio-options .radio-option input[type="radio"] {
+    display: none;
+}
+
+/* Style the label */
+.squiz-radio-options .radio-option label {
+    font-size: 0.9rem; /* Slightly smaller font size */
+    font-weight: 400;
+    color: #000;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+    text-align: center;
+    width: 100%; /* Ensure the label takes up the full width of the radio option */
+    padding: 5px; /* Padding inside label */
+}
+
+/* Style for checked radio option */
+.squiz-radio-options .radio-option input[type="radio"]:checked + label {
+    background-color: #98021D;
+    color: #fff;
+    border-color: #98021D;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .squiz-radio-options .radio-option {
+        flex: 0 1 calc(33.333% - 5px) !important; /* Three items per row on tablets and small desktops */
+        max-width: calc(33.333% - 5px) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .squiz-radio-options .radio-option {
+        flex: 0 1 calc(50% - 5px) !important; /* Two items per row on larger mobile devices */
+        max-width: calc(50% - 5px) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .squiz-radio-options .radio-option {
+        flex: 0 1 100% !important; /* One item per row on small mobile devices */
+        max-width: 100% !important;
+        border-radius: 5px; /* Optional: Rounded corners for the container */
+        gap: 15px !important; /* Ensure 5 pixels gap between items */
+        margin: 4px 0; /* Margin for spacing around the container */
+
+
+    }
+
+    .squiz-radio-options {
+        padding: 0.5rem; /* Reduce padding on smaller screens */
+    }
+
+    .squiz-radio-options .radio-option label {
+        font-size: 0.8rem; /* Slightly smaller font size for very small screens */
+    }
+}
+
+/* Extra small devices (small phones) */
+@media (max-width: 360px) {
+    .squiz-radio-options {
+        padding: 0.25rem; /* Further reduce padding on very small screens */
+        flex: 0 1 100% !important; /* One item per row on small mobile devices */
+        max-width: 100% !important;
+        border-radius: 5px; /* Optional: Rounded corners for the container */
+        gap: 15px !important; /* Ensure 5 pixels gap between items */
+        margin: 4px 0; /* Margin for spacing around the container */
+
+    }
+
+    .squiz-radio-options .radio-option {
+        flex: 0 1 100% !important; /* Ensure one item per row */
+        max-width: 100% !important;
+    }
+
+    .squiz-radio-options .radio-option label {
+        font-size: 0.75rem; /* Adjust font size for extra small screens */
+        padding: 0.25rem; /* Adjust padding inside label for extra small screens */
+    }
+}
 
 /* Global Styles */
 /* body {
@@ -535,14 +657,12 @@ footer.button:hover {
     width: 60%; /* Adjust the width to make the dropdown slightly smaller */
     max-width: 350px; /* Set a max-width to ensure it doesn't get too wide */
     margin: 0 auto; /* Center the dropdown */
-    
 }
 
 .choices__inner:focus-within {
     border-color: #0056b3;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     outline: none; /* Ensure outline is removed */
-    
 }
 
 .choices__list--single .choices__item {
@@ -600,6 +720,7 @@ footer.button:hover {
     text-align: center; /* Ensure the text is centered */
     color: white;
 }
+
 .choices__list--dropdown .choices__item--selectable.is-selected:hover {
     background: #98021D;
     text-align: center; /* Ensure the text is centered */
@@ -651,6 +772,7 @@ footer.button:hover {
     text-align: center; /* Ensure the text is centered */
 }
 
+/* Quiz Buttons */
 .squiz-quiz-buttons {
     display: flex;
     justify-content: space-between;
@@ -705,6 +827,7 @@ footer.button:hover {
     color: #b40e1d;
     text-align: center; /* Ensure the text is centered */
 }
+
 /* Media Queries squiz drop-down */
 
 @media (max-width: 1200px) {
@@ -783,48 +906,7 @@ footer.button:hover {
 }
 
 /* Media Queries for Mobiles */
-@media (max-width: 480px) {
-    .choices__inner {
-        width: 90%;
-        font-size: 0.75rem;
-    }
 
-    .choices__list--dropdown {
-        width: 95%;
-        z-index: 9999; /* Ensure dropdown is on top */
-        position: fixed; /* Ensure dropdown stays on top */
-        top: 50%; /* Adjust as necessary */
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: white; /* Ensure dropdown is visible */
-    }
-
-    .choices__list--dropdown .choices__item--selectable {
-        padding: 0.5rem;
-        font-size: 0.75rem;
-    }
-
-    .squiz-quiz-buttons {
-        max-width: 250px;
-        flex-direction: column;
-    }
-
-    .squiz-quiz-back,
-    .squiz-quiz-next,
-    .squiz-quiz-finish {
-        padding: 0.5rem 1rem;
-        font-size: 0.75rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .squiz-quiz-footer p {
-        font-size: 0.8rem;
-    }
-
-    .squiz-social-icons a {
-        font-size: 0.9rem;
-    }
-}
 /* Media Queries */
 @media (max-width: 900px) {
     .squiz-progress, .squiz-progress-dot, .squiz-progress-line {
@@ -838,12 +920,14 @@ footer.button:hover {
         padding: 1rem;
         position: absolute;
         top: 63%;
-        left: 50%;
-        right: -26%;
+        /* left: 50%; */
+        /* right: -26%; */
         bottom: -104%;
         transform: translate(-50%, -50%);
         color: #fff;
         text-align: center;
+        width: 80%;
+
     }
     .squiz-quiz-content h2 {
         font-size: 1.3rem;
@@ -907,7 +991,7 @@ footer.button:hover {
     }
 }
 
-
+/*  */
 /* for some reason this one does not take prescedence over the other media query of the same section and the same width, search this media query in the code for context*/
 @media (max-width: 480px) {
     .squiz-quiz-section {
@@ -948,13 +1032,51 @@ footer.button:hover {
         margin: 0 1rem;
     }
     .squiz-quiz-image {
-        width: 151%;
+        width: 300%;
         height: auto;
         background: url(/ALrn/images/squizrectbg.svg) no-repeat center center;
         background-size: cover;
 
     }
 }
+/* Additional styles for devices with max-width of 320px */
+@media (max-width: 379px) {
+    .squiz-quiz-section {
+        padding: 1.5rem 0 !important;
+    }
+    .squiz-quiz-content {
+        max-width: 90% !important;
+        padding: 0.4rem !important;
+    }
+    .squiz-quiz-content h2 {
+        font-size: 0.9rem !important;
+        padding-top: 20% !important;
+    }
+    .squiz-quiz-content p {
+        font-size: 0.65rem !important;
+    }
+    .squiz-quiz-options, .email-input {
+        font-size: 0.65rem !important;
+        padding: 0.35rem !important;
+    }
+    .squiz-quiz-buttons {
+        width: 90% !important;
+    }
+    .squiz-quiz-back, .squiz-quiz-next, .squiz-quiz-finish{
+        width: 70% !important;
+        padding: 0.35rem 0.4rem !important;
+        margin-bottom: 0.25rem !important;
+        font-size: 0.65rem !important;
+
+    }
+    .squiz-quiz-card {
+        margin: 0 0.5rem !important;
+    }
+    .squiz-quiz-image {
+        width: 320% !important;
+    }
+}
+
 
 /* Additional Media Queries */
 /* @media (max-width: 375px) {
@@ -1160,9 +1282,9 @@ footer.button:hover {
     .squiz-quiz-back,
     .squiz-quiz-next,
     .squiz-quiz-finish {
-        width: auto; /* Adjust width to auto for proper alignment */
+        width: 107px; /* Adjust width to auto for proper alignment */
         padding: 0.5rem 1rem;
-        font-size: 0.75rem;
+        font-size: 0.95rem;
         margin-bottom: 0; /* Remove margin-bottom to align in a row */
     }
     .loop-section h2 {
@@ -1180,12 +1302,14 @@ footer.button:hover {
     .squiz-quiz-section {
         padding: 1.5rem 0;
     }
-    .squiz-quiz-content {
-        max-width: 75%;
-        /* padding: 0.5rem; */
-    }
+    /* .squiz-quiz-content {
+        max-width: 75%; 
+        padding: 0.5rem
+    } */
+
     .squiz-quiz-content h2 {
         font-size: 1.3rem;
+        padding-top: 0%;
     }
     .squiz-quiz-content p {
         font-size: 0.6rem;

@@ -43,13 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const quizImage = document.querySelector('.squiz-quiz-image');
     const quizContent = document.querySelector('.squiz-quiz-content');
-    const quizOptions = document.querySelector('.squiz-quiz-options');
+    const quizOptions = document.querySelector('.squiz-radio-options');
     const progressDots = document.querySelectorAll('.squiz-progress-dot');
     const nextButton = document.querySelector('.squiz-quiz-next');
     const backButton = document.querySelector('.squiz-quiz-back');
     const finishButton = document.querySelector('.squiz-quiz-finish');
     const selectedOptions = [];
-    let choicesInstance;
 
     function updateQuiz() {
         const currentQuestion = questions[currentQuestionIndex];
@@ -63,31 +62,24 @@ document.addEventListener('DOMContentLoaded', () => {
             quizContent.querySelector('p').textContent = currentQuestion.text;
             quizOptions.style.display = 'block';
             quizOptions.innerHTML = ''; // Clear any previous options
-            if (choicesInstance) {
-                choicesInstance.destroy(); // Destroy previous instance
-            }
-            choicesInstance = new Choices(quizOptions, {
-                searchEnabled: false,
-                itemSelectText: '',
-                removeItemButton: false,
-                shouldSort: false,
-                classNames: {
-                    containerOuter: 'choices',
-                    containerInner: 'choices__inner',
-                    list: 'choices__list',
-                    listDropdown: 'choices__list--dropdown',
-                    item: 'choices__item',
-                    itemSelectable: 'choices__item--selectable',
-                    selectedState: 'is-selected',
-                    highlightedState: 'is-highlighted',
-                }
+            currentQuestion.options.forEach((option, index) => {
+                const radioOptionDiv = document.createElement('div');
+                radioOptionDiv.classList.add('radio-option');
+                
+                const radioButton = document.createElement('input');
+                radioButton.type = 'radio';
+                radioButton.name = 'option';
+                radioButton.value = option;
+                radioButton.id = `option-${index}`;
+
+                const label = document.createElement('label');
+                label.textContent = option;
+                label.htmlFor = `option-${index}`;
+
+                radioOptionDiv.appendChild(radioButton);
+                radioOptionDiv.appendChild(label);
+                quizOptions.appendChild(radioOptionDiv);
             });
-            choicesInstance.setChoices(
-                currentQuestion.options.map(option => ({ value: option, label: option })),
-                'value',
-                'label',
-                false
-            );
         }
         updateProgressDots();
 
@@ -126,9 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Please enter a valid email address.');
             }
         } else {
-            const selectedOption = choicesInstance.getValue(true);
+            const selectedOption = document.querySelector('input[name="option"]:checked');
             if (selectedOption) {
-                selectedOptions[currentQuestionIndex - 1] = selectedOption;
+                selectedOptions[currentQuestionIndex - 1] = selectedOption.value;
                 if (currentQuestionIndex < questions.length - 1) {
                     currentQuestionIndex++;
                     updateQuiz();
@@ -147,9 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     finishButton.addEventListener('click', () => {
-        const selectedOption = choicesInstance.getValue(true);
+        const selectedOption = document.querySelector('input[name="option"]:checked');
         if (selectedOption) {
-            selectedOptions[currentQuestionIndex - 1] = selectedOption;
+            selectedOptions[currentQuestionIndex - 1] = selectedOption.value;
             // Print the selected options to the console
             console.log('Selected options:', selectedOptions);
 
