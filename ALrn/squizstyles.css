@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* font-family: "Abhaya Libre", serif; */
 }
 
 body {
@@ -608,7 +609,7 @@ footer.button:hover {
 
 .squiz-quiz-content h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: -1rem;
     font-weight: bold;
 }
 
@@ -777,7 +778,7 @@ footer.button:hover {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 400px;
+    max-width: 480px;
     margin: 0 auto;
     text-align: center; /* Ensure the text is centered */
 }
@@ -787,7 +788,7 @@ footer.button:hover {
 .squiz-quiz-finish {
     background-color: #940e19;
     color: #fff;
-    padding: 0.75rem 1.5rem;
+    padding: 0.55rem 2.5rem;
     border: none;
     border-radius: 45px;
     font-size: 1rem;
@@ -1063,7 +1064,7 @@ footer.button:hover {
         width: 90% !important;
     }
     .squiz-quiz-back, .squiz-quiz-next, .squiz-quiz-finish{
-        width: 70% !important;
+        width: 40% !important;
         padding: 0.35rem 0.4rem !important;
         margin-bottom: 0.25rem !important;
         font-size: 0.65rem !important;
@@ -1151,6 +1152,7 @@ footer.button:hover {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    flex-direction: column-reverse;
 }
 
 .loop-section .loop-card {
