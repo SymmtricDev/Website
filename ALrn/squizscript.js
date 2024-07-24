@@ -8,33 +8,33 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             image: 'images/symsqbg.svg',
-            question: 'Does the person next to you look & dress better than you?',
+            question: 'How often do you update your wardrobe?',
             text: '',
-            options: ['No, I look the best', 'I was Mr/Ms farewell in my school', 'I was diva at my college', "I don’t care", "Yes they do", "I wish I knew how to dress better"]
+            options: ['Only when I absolutely have to.', 'When I find something that perfectly fits my vibe.', "All the time, I'm a fashion chameleon!"]
         },
         {
             image: 'images/symsqbg.svg',
-            question: 'Do you ever look at influencers & think you can be one of them?',
+            question: 'When shopping for clothes, what do you prioritize?',
             text: '',
-            options: ['Yes, I do', 'No, I do not', 'If I get the opportunity why not']
+            options: ['Whatever’s comfy and easy on the wallet.', 'Pieces that blend seamlessly with my wardrobe.', 'The latest trends and eye-catching pieces.']
         },
         {
             image: 'images/symsqbg.svg',
-            question: 'Do you want to be an influencer on Instagram?',
+            question: 'How do you describe your style?',
             text: '',
-            options: ['Yes, I want to be an influencer on Instagram', 'Fashion is not that important to me', 'No, I’m just happy dressing to college every day']
+            options: ['Style? What’s that?', 'I’ve got my signature look down.', 'A work in progress, always evolving.']
         },
         {
             image: 'images/symsqbg.svg',
-            question: "Why aren't you an influencer yet?",
-            text: "",
-            options: ['It’s hard to crack social media', 'I want to focus on another career', 'To buy clothes to be an influencer is too much']
+            question: 'How often do you seek fashion inspiration?',
+            text: '',
+            options: ['Almost never, I just go with the flow.', 'Now and then, to keep things fresh.', 'Constantly, I live and breathe fashion!']
         },
         {
             image: 'images/symsqbg.svg',
-            question: 'Thank you for taking our Quiz!',
-            text: "Please choose one of the following.",
-            options: ['I want to be a local influencer', 'I love my fashion & want to share it', 'I want to be a global influencer', 'I want to look good for myself when I go to buy groceries']
+            question: 'How confident are you in your fashion choices?',
+            text: '',
+            options: ['Not really, I just throw on whatever.', 'Totally, I know what works for me.', "Getting there, I'm on a stylish journey."]
         }
     ];
 
