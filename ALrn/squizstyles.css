@@ -3,7 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: "Abhaya Libre", serif; */
+    font-family: "Abhaya Libre", serif;
+    font-weight: bold;
 }
 
 body {
@@ -1039,6 +1040,15 @@ footer.button:hover {
         background-size: cover;
 
     }
+    .quiz-options .option {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 2rem;
+        flex: 0 0 51%; /* Ensure each option takes up 45% of the container's width */
+        margin: 1rem 0;
+        transition: box-shadow 0.3s ease;
+    }
 }
 /* Additional styles for devices with max-width of 320px */
 @media (max-width: 379px) {
@@ -1055,6 +1065,15 @@ footer.button:hover {
     }
     .squiz-quiz-content p {
         font-size: 0.65rem !important;
+    }
+    .quiz-options .option {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 2rem;
+        flex: 0 0 51%; /* Ensure each option takes up 45% of the container's width */
+        margin: 1rem 0;
+        transition: box-shadow 0.3s ease;
     }
     .squiz-quiz-options, .email-input {
         font-size: 0.65rem !important;
@@ -1309,7 +1328,15 @@ footer.button:hover {
         max-width: 75%; 
         padding: 0.5rem
     } */
-
+    .quiz-options .option {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 2rem;
+        flex: 0 0 51%; /* Ensure each option takes up 45% of the container's width */
+        margin: 1rem 0;
+        transition: box-shadow 0.3s ease;
+    }
     .squiz-quiz-content h2 {
         font-size: 1.3rem;
         padding-top: 0%;
