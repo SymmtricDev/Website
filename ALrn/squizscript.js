@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.querySelector('.squiz-quiz-next');
     const backButton = document.querySelector('.squiz-quiz-back');
     const finishButton = document.querySelector('.squiz-quiz-finish');
+    const questionCountElement = document.querySelector('.squiz-question-count');
+    const currentQuestionElement = document.getElementById('current-question');
     const selectedOptions = [];
 
     function updateQuiz() {
@@ -57,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             quizContent.querySelector('h2').textContent = currentQuestion.question;
             quizContent.querySelector('p').innerHTML = '<input type="email" class="email-input" placeholder="Enter your email">';
             quizOptions.style.display = 'none';
+            questionCountElement.style.display = 'none';
         } else {
             quizContent.querySelector('h2').textContent = currentQuestion.question;
             quizContent.querySelector('p').textContent = currentQuestion.text;
@@ -80,8 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 radioOptionDiv.appendChild(label);
                 quizOptions.appendChild(radioOptionDiv);
             });
+            questionCountElement.style.display = 'block';
         }
         updateProgressDots();
+        updateQuestionCount();
 
         if (currentQuestionIndex === questions.length - 1) {
             nextButton.style.display = 'none';
@@ -100,6 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 dot.classList.remove('active');
             }
         });
+    }
+
+    function updateQuestionCount() {
+        currentQuestionElement.textContent = currentQuestionIndex;
     }
 
     function validateEmail(email) {

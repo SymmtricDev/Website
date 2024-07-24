@@ -1272,6 +1272,7 @@ footer.button:hover {
     }
     .squiz-quiz-content p {
         font-size: 0.9rem;
+        padding-top: 15px;
     }
     .squiz-quiz-buttons {
         max-width: 250px;
