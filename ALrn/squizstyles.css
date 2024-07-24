@@ -3,8 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Abhaya Libre", serif;
-    font-weight: bold;
+    /* font-family: "Abhaya Libre", serif; */
+    /* font-weight: bold; */
 }
 
 body {
@@ -1004,9 +1004,12 @@ footer.button:hover {
         padding: 0.5rem;
     }
     .squiz-quiz-content h2 {
-        font-size: 1rem;
+        /* font-size: 1rem; */
         padding-top: 26%;
         width: auto;
+        font-size: 2rem;
+        margin-bottom: -0.5rem;
+        font-weight: bold;
     }
     .squiz-quiz-content p {
         font-size: 0.7rem;
@@ -1062,6 +1065,9 @@ footer.button:hover {
     .squiz-quiz-content h2 {
         /* font-size: 0.9rem !important; */
         padding-top: 20% !important;
+        font-size: 2rem;
+        margin-bottom: -0.5rem;
+        font-weight: bold;
     }
     .squiz-quiz-content p {
         font-size: 0.65rem !important;
@@ -1290,6 +1296,7 @@ footer.button:hover {
     }
     .squiz-quiz-content h2 {
         font-size: 1.3rem;
+
     }
     .squiz-quiz-content p {
         font-size: 0.9rem;
