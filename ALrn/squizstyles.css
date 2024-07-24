@@ -610,7 +610,7 @@ footer.button:hover {
 
 .squiz-quiz-content h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: -0.5rem;
     font-weight: bold;
 }
 
@@ -1060,7 +1060,7 @@ footer.button:hover {
         padding: 0.4rem !important;
     }
     .squiz-quiz-content h2 {
-        font-size: 0.9rem !important;
+        /* font-size: 0.9rem !important; */
         padding-top: 20% !important;
     }
     .squiz-quiz-content p {
@@ -1488,6 +1488,8 @@ footer {
     .footer-container {
         flex-direction: column;
         text-align: center;
+        text-align: center;
+        padding-top: 17px;
     }
 
     .footer-content, .footer-links, .download-section {
