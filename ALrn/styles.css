@@ -1208,6 +1208,8 @@ footer {
     .footer-container {
         flex-direction: column;
         text-align: center;
+        padding-top: 17px;
+
     }
 
     .footer-content, .footer-links, .download-section {
