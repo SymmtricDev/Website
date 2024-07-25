@@ -35,6 +35,36 @@ document.addEventListener('DOMContentLoaded', () => {
             question: 'How confident are you in your fashion choices?',
             text: '',
             options: ['Not really, I just throw on whatever.', 'Totally, I know what works for me.', "Getting there, I'm on a stylish journey."]
+        },
+        {
+            image: 'images/symsqbg.svg',
+            question: 'If you received an invitation to a fashion show, how would you feel?',
+            text: '',
+            options: ['Meh, not my scene.', 'Excited, I love checking out new trends!', 'Over the moon, I’d be front row and center!']
+        },
+        {
+            image: 'images/symsqbg.svg',
+            question: 'How often do you receive compliments on your outfits?',
+            text: '',
+            options: ['Almost never.', 'Quite often, actually.', 'Sometimes, and it\'s happening more as I experiment.']
+        },
+        {
+            image: 'images/symsqbg.svg',
+            question: 'Do you follow any fashion influencers on social media?',
+            text: '',
+            options: ['Nope, not into that stuff.', 'Yeah, a few that match my style.', 'Absolutely, I need all the inspo I can get!']
+        },
+        {
+            image: 'images/symsqbg.svg',
+            question: 'If given a chance, would you like to become a fashion influencer?',
+            text: '',
+            options: ['No way, that’s not my thing.', 'Maybe, if it fits with my style journey.', 'Yes, bring on the followers and fashion collabs!']
+        },
+        {
+            image: 'images/symsqbg.svg',
+            question: 'How do you feel about trying bold and unconventional fashion items?',
+            text: '',
+            options: ['Not for me, I like to play it safe.', 'I’ll try them if they fit my style.', 'Love it, the bolder the better!']
         }
     ];
 
@@ -204,6 +234,7 @@ function toggleMenu() {
     burgerMenu.classList.toggle('open');
     mobileNav.classList.toggle('open');
 }
+
 // header line listener
 document.addEventListener('DOMContentLoaded', function() {
     const currentPath = window.location.pathname;

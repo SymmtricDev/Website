@@ -584,7 +584,7 @@ footer.button:hover {
         border-radius: 5px; /* Optional: Rounded corners for the container */
         gap: 15px !important; /* Ensure 5 pixels gap between items */
         margin: 4px 0; /* Margin for spacing around the container */
-
+        padding-bottom: 8px;
 
     }
 
@@ -659,7 +659,7 @@ footer.button:hover {
 }
 
 .squiz-progress-line {
-    width: 14rem;
+    width: 7rem;
     height: 0.125rem;
     background-color: #ccc;
     transition: background-color 0.3s ease;
@@ -1091,7 +1091,7 @@ footer.button:hover {
     }
     .squiz-quiz-content h2 {
         /* font-size: 1rem; */
-        padding-top: 26%;
+        padding-top: 35%;
         width: auto;
         font-size: 2rem;
         margin-bottom: -0.5rem;
@@ -1150,7 +1150,7 @@ footer.button:hover {
     }
     .squiz-quiz-content h2 {
         /* font-size: 0.9rem !important; */
-        padding-top: 20% !important;
+        padding-top: 27% !important;
         font-size: 2rem;
         margin-bottom: -0.5rem;
         font-weight: bold;
@@ -1381,12 +1381,12 @@ footer.button:hover {
         padding: 1rem;
     }
     .squiz-quiz-content h2 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
 
     }
     .squiz-quiz-content p {
         font-size: 0.9rem;
-        padding-top: 15px;
+        padding-top: 17px;
     }
     .squiz-quiz-buttons {
         max-width: 250px;

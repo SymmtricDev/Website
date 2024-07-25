@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 import mysql.connector
 from flask_cors import CORS
 from flask_cors import cross_origin
+from datetime import datetime
+import pytz
 
 
 app = Flask(__name__)
@@ -20,9 +22,38 @@ try:
 except mysql.connector.Error as err:
     print(f"Error: {err}")
 
+# @app.route('/api/save-quiz-results', methods=['POST'])
+# @cross_origin()
+
+# def save_quiz_results():
+#     data = request.get_json()
+#     print("Received quiz results data:", data)  # Debugging statement
+#     if 'results' in data:
+#         email = data.get('email')
+#         answers = data.get('results')
+
+#         if email and isinstance(answers, list) and len(answers) == 5:
+#             try:
+#                 cursor = conn.cursor()
+#                 insert_query = """
+#                     INSERT INTO squiz_answers (email, answer1, answer2, answer3, answer4, answer5)
+#                     VALUES (%s, %s, %s, %s, %s, %s)
+#                 """
+#                 answer1, answer2, answer3, answer4, answer5 = answers
+#                 cursor.execute(insert_query, (email, answer1, answer2, answer3, answer4, answer5))
+#                 conn.commit()
+#                 cursor.close()
+#                 return jsonify({"message": "Quiz results saved successfully!"}), 200
+#             except mysql.connector.Error as err:
+#                 print(f"Database error: {err}")  # Debugging statement
+#                 return jsonify({"error": f"Database error: {err}"}), 500
+#         else:
+#             return jsonify({"error": "Invalid data format"}), 400
+#     else:
+#         return jsonify({"error": "Results field not found in data"}), 400
+
 @app.route('/api/save-quiz-results', methods=['POST'])
 @cross_origin()
-
 def save_quiz_results():
     data = request.get_json()
     print("Received quiz results data:", data)  # Debugging statement
@@ -30,15 +61,18 @@ def save_quiz_results():
         email = data.get('email')
         answers = data.get('results')
 
-        if email and isinstance(answers, list) and len(answers) == 5:
+        if email and isinstance(answers, list) and len(answers) == 10:
             try:
+                # Get current IST timestamp
+                ist = pytz.timezone('Asia/Kolkata')
+                current_time_ist = datetime.now(ist).strftime('%Y-%m-%d %H:%M:%S')
+
                 cursor = conn.cursor()
                 insert_query = """
-                    INSERT INTO squiz_answers (email, answer1, answer2, answer3, answer4, answer5)
-                    VALUES (%s, %s, %s, %s, %s, %s)
+                    INSERT INTO squiz_answers (email, timestamp, answer1, answer2, answer3, answer4, answer5, answer6, answer7, answer8, answer9, answer10)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 """
-                answer1, answer2, answer3, answer4, answer5 = answers
-                cursor.execute(insert_query, (email, answer1, answer2, answer3, answer4, answer5))
+                cursor.execute(insert_query, (email, current_time_ist, *answers))
                 conn.commit()
                 cursor.close()
                 return jsonify({"message": "Quiz results saved successfully!"}), 200
@@ -49,6 +83,7 @@ def save_quiz_results():
             return jsonify({"error": "Invalid data format"}), 400
     else:
         return jsonify({"error": "Results field not found in data"}), 400
+
 
 @app.route('/api/submit-feedback', methods=['POST'])
 @cross_origin()
