@@ -711,6 +711,7 @@ footer.button:hover {
     font-size: 2rem;
     margin-bottom: 0rem;
     font-weight: bold;
+    padding-bottom: 1rem;
 }
 
 .squiz-quiz-content p {
