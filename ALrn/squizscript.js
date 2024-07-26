@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const questions = [
         {
             image: 'images/symsqbg.svg',
-            question: 'Before starting the Squiz please enter your email address to receive updates.',
+            question: 'Please enter you email before starting the Squiz.',
             text: '',
             options: []
         },
@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             quizContent.querySelector('p').innerHTML = '<input type="email" class="email-input" placeholder="Enter your email">';
             quizOptions.style.display = 'none';
             questionCountElement.style.display = 'none';
+            backButton.style.display = 'none'; // Hide the back button on the first question
         } else {
             quizContent.querySelector('h2').textContent = currentQuestion.question;
             quizContent.querySelector('p').textContent = currentQuestion.text;
@@ -98,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentQuestion.options.forEach((option, index) => {
                 const radioOptionDiv = document.createElement('div');
                 radioOptionDiv.classList.add('radio-option');
-                
+
                 const radioButton = document.createElement('input');
                 radioButton.type = 'radio';
                 radioButton.name = 'option';
@@ -114,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 quizOptions.appendChild(radioOptionDiv);
             });
             questionCountElement.style.display = 'block';
+            backButton.style.display = 'block'; // Show the back button on subsequent questions
         }
         updateProgressDots();
         updateQuestionCount();
@@ -181,12 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedOption = document.querySelector('input[name="option"]:checked');
         if (selectedOption) {
             selectedOptions[currentQuestionIndex - 1] = selectedOption.value;
-            // Print the selected options to the console
             console.log('Selected options:', selectedOptions);
 
             // AJAX request to save selectedOptions and email to MySQL database
             const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://symmatric.com/api/save-quiz-results', true); // Updated to use HTTPS
+            xhr.open('POST', 'https://symmatric.com/api/save-quiz-results', true);
             xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {

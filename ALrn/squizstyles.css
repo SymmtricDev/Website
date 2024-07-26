@@ -672,7 +672,7 @@ footer.button:hover {
 }
 
 .squiz-progress-line {
-    width: 6rem;
+    width: 6.4rem;
     height: 0.125rem;
     background-color: #ccc;
     transition: background-color 0.3s ease;
@@ -892,7 +892,7 @@ footer.button:hover {
     background-color: #940e19;
     color: #fff;
     padding: 0.55rem 2.5rem;
-    border: none;
+    /* border: none; */
     border-radius: 45px;
     font-size: 1rem;
     cursor: pointer;
