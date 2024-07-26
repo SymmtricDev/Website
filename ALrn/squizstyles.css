@@ -510,8 +510,8 @@ footer.button:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 5px !important; /* Ensure 5 pixels gap between items */
-    margin: 1rem 0; /* Margin for spacing around the container */
-    justify-content: flex-start; /* Align items to the start */
+    margin: 1rem auto; /* Center the container horizontally */
+    justify-content: center; /* Center the items within the container */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the background image */
     padding: 1rem; /* Padding to ensure space around the edges */
@@ -530,8 +530,8 @@ footer.button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 0 1 calc(50% - 5px) !important; /* Two items per row with 5px gap */
-    max-width: calc(50% - 5px) !important; /* Ensure options do not exceed the width */
+    flex: 0 1 calc(33.333% - 5px) !important; 
+    /* max-width: calc(33.333% - 5px) !important;  */
     box-sizing: border-box !important; /* Include padding and border in the element's total width and height */
     width: 100% !important; /* Make the option span the entire width of the container */
 }
@@ -543,7 +543,8 @@ footer.button:hover {
 
 /* Style the label */
 .squiz-radio-options .radio-option label {
-    font-size: 0.9rem; /* Slightly smaller font size */
+    /* font-size: 0.9rem;  */
+    font-size: 17px; 
     font-weight: 400;
     color: #000;
     cursor: pointer;
@@ -563,10 +564,23 @@ footer.button:hover {
 }
 
 /* Responsive Adjustments */
+/* Large screens (laptops and desktops) */
+@media (min-width: 1025px) {
+    .squiz-radio-options .radio-option {
+        flex: 0 1 calc(33.333% - 5px) !important; /* Three items per row on larger screens */
+        /* max-width: calc(33.333% - 5px) !important;
+        margin-left: 8rem; */
+    }
+    .squiz-quiz-content h2{
+        margin-bottom: 0rem;
+
+    }
+}
+
 @media (max-width: 1024px) {
     .squiz-radio-options .radio-option {
-        flex: 0 1 calc(33.333% - 5px) !important; /* Three items per row on tablets and small desktops */
-        max-width: calc(33.333% - 5px) !important;
+        flex: 0 1 calc(50% - 5px) !important; /* Two items per row on tablets and small desktops */
+        max-width: calc(50% - 5px) !important;
     }
 }
 
@@ -585,7 +599,6 @@ footer.button:hover {
         gap: 15px !important; /* Ensure 5 pixels gap between items */
         margin: 4px 0; /* Margin for spacing around the container */
         padding-bottom: 8px;
-
     }
 
     .squiz-radio-options {
@@ -606,7 +619,6 @@ footer.button:hover {
         border-radius: 5px; /* Optional: Rounded corners for the container */
         gap: 15px !important; /* Ensure 5 pixels gap between items */
         margin: 4px 0; /* Margin for spacing around the container */
-
     }
 
     .squiz-radio-options .radio-option {
@@ -619,6 +631,7 @@ footer.button:hover {
         padding: 0.25rem; /* Adjust padding inside label for extra small screens */
     }
 }
+
 
 /* Global Styles */
 /* body {
@@ -659,7 +672,7 @@ footer.button:hover {
 }
 
 .squiz-progress-line {
-    width: 7rem;
+    width: 6rem;
     height: 0.125rem;
     background-color: #ccc;
     transition: background-color 0.3s ease;
@@ -696,7 +709,7 @@ footer.button:hover {
 
 .squiz-quiz-content h2 {
     font-size: 2rem;
-    margin-bottom: -0.5rem;
+    /* margin-bottom: -0.5rem; */
     font-weight: bold;
 }
 
@@ -917,6 +930,11 @@ footer.button:hover {
 }
 
 /* Media Queries squiz drop-down */
+@media (max-width: 1500px) {
+    .squiz-quiz-content h2  {
+        margin-bottom: 0rem;
+    }
+}
 
 @media (max-width: 1200px) {
     .choices__inner {
