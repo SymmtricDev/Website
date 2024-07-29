@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             image: 'images/symsqbg.svg',
             question: 'How often do you update your wardrobe?',
             text: '',
-            options: ['Only when I absolutely have to.', 'When I find something that perfectly fits my vibe.', "All the time, I'm a fashion chameleon!"]
+            options: ['Only when I absolutely have to.', "All the time, I'm a fashion chameleon!", "When I find something that perfectly fits my vibe."]
         },
         {
             image: 'images/symsqbg.svg',
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateQuestionCount() {
-        currentQuestionElement.textContent = currentQuestionIndex;
+        currentQuestionElement.textContent = currentQuestionIndex + 1;
     }
 
     function validateEmail(email) {
@@ -184,6 +184,30 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedOption) {
             selectedOptions[currentQuestionIndex - 1] = selectedOption.value;
             console.log('Selected options:', selectedOptions);
+
+            // Count the number of selections for each option
+            const counts = { circle: 0, square: 0, triangle: 0 };
+            selectedOptions.forEach(option => {
+                if (questions[1].options.indexOf(option) === 0) counts.circle++;
+                if (questions[1].options.indexOf(option) === 1) counts.square++;
+                if (questions[1].options.indexOf(option) === 2) counts.triangle++;
+            });
+
+            // Determine the result based on counts
+            let resultImage = 'images/sym-squiz-result-triangle.svg'; // Default to triangle
+            if (counts.circle > counts.square && counts.circle > counts.triangle) {
+                resultImage = 'images/sym-squiz-result-circle.svg';
+            } else if (counts.square > counts.circle && counts.square > counts.triangle) {
+                resultImage = 'images/sym-squiz-result-square.svg';
+            } else if (counts.triangle > counts.circle && counts.triangle > counts.square) {
+                resultImage = 'images/sym-squiz-result-triangle.svg';
+            }
+
+            // Save the result image source to local storage
+            localStorage.setItem('resultImage', resultImage);
+
+            // Redirect to the result page
+            window.location.href = 'squizresult.html';
 
             // AJAX request to save selectedOptions and email to MySQL database
             const xhr = new XMLHttpRequest();
@@ -246,4 +270,10 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.add('active');
         }
     });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const resultImage = localStorage.getItem('resultImage');
+    if (resultImage) {
+        document.getElementById('result-image').src = resultImage;
+    }
 });
