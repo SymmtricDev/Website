@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const questions = [
         {
             image: 'images/symsqbg.svg',
-            question: 'Please enter you email before starting the Squiz.',
+            question: 'Please enter your email before starting the Squiz.',
             text: '',
             options: []
         },
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateQuestionCount() {
-        currentQuestionElement.textContent = currentQuestionIndex + 1;
+        currentQuestionElement.textContent = currentQuestionIndex; // Updated to skip email question
     }
 
     function validateEmail(email) {
@@ -197,10 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
             let resultImage = 'images/sym-squiz-result-triangle.svg'; // Default to triangle
             if (counts.circle > counts.square && counts.circle > counts.triangle) {
                 resultImage = 'images/sym-squiz-result-circle.svg';
-            // } else if (counts.square > counts.circle && counts.square > counts.triangle) {
-            //     resultImage = 'images/sym-squiz-result-square.svg';
-            // } else if (counts.triangle > counts.circle && counts.triangle > counts.square) {
-            //     resultImage = 'images/sym-squiz-result-triangle.svg';
+            } else if (counts.square > counts.circle && counts.square > counts.triangle) {
+                resultImage = 'images/sym-squiz-result-square.svg';
+            } else if (counts.triangle > counts.circle && counts.triangle > counts.square) {
+                resultImage = 'images/sym-squiz-result-triangle.svg';
             }
 
             // Save the result image source to local storage
@@ -271,6 +271,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
 document.addEventListener('DOMContentLoaded', () => {
     const resultImage = localStorage.getItem('resultImage');
     if (resultImage) {
