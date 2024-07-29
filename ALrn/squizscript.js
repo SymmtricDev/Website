@@ -197,10 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
             let resultImage = 'images/sym-squiz-result-triangle.svg'; // Default to triangle
             if (counts.circle > counts.square && counts.circle > counts.triangle) {
                 resultImage = 'images/sym-squiz-result-circle.svg';
-            } else if (counts.square > counts.circle && counts.square > counts.triangle) {
-                resultImage = 'images/sym-squiz-result-square.svg';
-            } else if (counts.triangle > counts.circle && counts.triangle > counts.square) {
-                resultImage = 'images/sym-squiz-result-triangle.svg';
+            // } else if (counts.square > counts.circle && counts.square > counts.triangle) {
+            //     resultImage = 'images/sym-squiz-result-square.svg';
+            // } else if (counts.triangle > counts.circle && counts.triangle > counts.square) {
+            //     resultImage = 'images/sym-squiz-result-triangle.svg';
             }
 
             // Save the result image source to local storage
