@@ -730,3 +730,20 @@ footer {
         font-size: 0.7rem;
     }
 }
+
+.squiz-quiz-back,
+.squiz-quiz-next,
+.squiz-quiz-finish {
+    background-color: #940e19;
+    color: #fff;
+    padding: 0.55rem 2.5rem;
+    /* border: none; */
+    border-radius: 45px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Ensure the text is centered */
+}
