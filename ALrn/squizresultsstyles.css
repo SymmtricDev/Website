@@ -353,6 +353,46 @@ header nav ul li a:hover {
     text-align: center;
 }
 
+
+/* MEDIA QUERIES FOR CORE */
+
+
+
+/* General adjustments for small screens */
+@media (max-width: 600px) {
+    /* Centering the image */
+    .squiz-quiz-results-section {
+        padding: 1rem; /* Add some padding to the container */
+    }
+
+    /* Styling the image */
+    .squiz-quiz-results-image img {
+        max-width: 100%;
+        padding-top: 2rem; /* Reduce padding for better fit */
+        padding-left: 0;   /* Remove left padding */
+    }
+
+    /* Styling the footer */
+    .squiz-quiz-footer p {
+        font-size: 1rem;  /* Decrease font size for readability */
+        margin-bottom: 0.5rem; /* Reduce margin for better spacing */
+    }
+}
+
+/* Additional tweaks for very small screens */
+@media (max-width: 400px) {
+    /* Further reduce padding on the image */
+    .squiz-quiz-results-image img {
+        padding-top: 1rem; /* Further reduce top padding */
+    }
+
+    /* Further adjust footer text size */
+    .squiz-quiz-footer p {
+        font-size: 0.9rem;  /* Further decrease font size */
+    }
+}
+
+
 /* Loop Section */
 .loop-section {
     background-color: #F9F8F4;
