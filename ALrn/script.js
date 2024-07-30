@@ -74,11 +74,20 @@ function handleOrientationChange() {
     }
 }
 
-function isMobileDevice() {
-    return /Mobi|Android/i.test(navigator.userAgent);
-}
+// Initial check
+handleOrientationChange();
 
+// Listen for orientation changes
+window.addEventListener("orientationchange", handleOrientationChange);
+// 
+// 
+// 
+// 
 function checkDesktopModeOnMobile() {
+    function isMobileDevice() {
+        return /Mobi|Android/i.test(navigator.userAgent);
+    }
+
     if (isMobileDevice() && window.innerWidth > window.innerHeight) {
         document.body.style.display = "none";
         alert("Please disable desktop mode on your mobile device.");
@@ -88,9 +97,7 @@ function checkDesktopModeOnMobile() {
 }
 
 // Initial check
-handleOrientationChange();
 checkDesktopModeOnMobile();
 
-// Listen for orientation changes and viewport resizing
-window.addEventListener("orientationchange", handleOrientationChange);
+// Listen for viewport resizing
 window.addEventListener("resize", checkDesktopModeOnMobile);
