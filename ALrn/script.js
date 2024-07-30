@@ -63,37 +63,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-// function handleOrientationChange() {
-//     if (window.orientation === 0 || window.orientation === 180) {
-//         // Portrait mode
-//         document.body.style.display = "block";
-//     } else if (window.orientation === 90 || window.orientation === -90) {
-//         // Landscape mode
-//         document.body.style.display = "none";
-//         alert("Please use the site in portrait mode for the best experience.");
-//     }
-// }
-
-// // Initial check
-// handleOrientationChange();
-
-// // Listen for orientation changes
-// window.addEventListener("orientationchange", handleOrientationChange);
-document.getElementById('lockButton').addEventListener('click', async () => {
-    try {
-        if (screen.orientation && screen.orientation.lock) {
-            await screen.orientation.lock("portrait");
-            alert("Orientation locked to portrait mode.");
-        } else {
-            alert("Screen Orientation API is not supported on this device.");
-        }
-    } catch (error) {
-        console.error("Failed to lock orientation:", error);
+function handleOrientationChange() {
+    if (window.orientation === 0 || window.orientation === 180) {
+        // Portrait mode
+        document.body.style.display = "block";
+    } else if (window.orientation === 90 || window.orientation === -90) {
+        // Landscape mode
+        document.body.style.display = "none";
+        alert("Please use the site in portrait mode for the best experience.");
     }
-});
+}
 
-window.addEventListener("orientationchange", () => {
-    if (screen.orientation.type.startsWith("landscape")) {
-        alert("Please rotate your device back to portrait mode.");
-    }
-});
+// Initial check
+handleOrientationChange();
+
+// Listen for orientation changes
+window.addEventListener("orientationchange", handleOrientationChange);
