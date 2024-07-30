@@ -736,10 +736,10 @@ header nav ul li a:hover {
 }
 
 @media (max-width: 1024px) {
-    .fashion-couture {
+    /* .fashion-couture {
         height: auto;
         padding: 1rem;
-    }
+    } */
 
     .fashion-couture-content {
         flex-direction: column;
@@ -775,10 +775,10 @@ header nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
-    .fashion-couture {
+    /* .fashion-couture {
         height: auto;
         padding: 1rem;
-    }
+    } */
 
     .fashion-couture-content {
         flex-direction: column;
@@ -814,10 +814,10 @@ header nav ul li a:hover {
 }
 
 @media (max-width: 480px) {
-    .fashion-couture {
+    /* .fashion-couture {
         height: auto;
         padding: 0.5rem;
-    }
+    } */
 
     .fashion-couture-content {
         flex-direction: column;
