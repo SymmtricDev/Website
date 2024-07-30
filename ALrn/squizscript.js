@@ -278,3 +278,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('result-image').src = resultImage;
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const nextButton = document.querySelector('.squiz-quiz-next');
+
+    if (nextButton) {
+        nextButton.style.marginLeft = '4rem'; // Initial state
+
+        nextButton.addEventListener('click', function() {
+            nextButton.style.marginLeft = '0'; // Change margin-left to 0 after click
+        });
+    }
+});

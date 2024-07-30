@@ -1418,7 +1418,7 @@ footer.button:hover {
     .squiz-quiz-back,
     .squiz-quiz-next,
     .squiz-quiz-finish {
-        /* width: 107px;  */
+        width: 107px; 
         padding: 0.5rem 1rem;
         font-size: 0.95rem;
         margin-bottom: 0; /* Remove margin-bottom to align in a row */
