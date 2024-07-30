@@ -320,6 +320,13 @@ header nav ul li a:hover {
     }
 }
 
+@media (max-width: 992px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
 /* header section end ----all header media queries end here--- */
 
 /* Squiz section styles */
@@ -1193,10 +1200,10 @@ footer.button:hover {
         padding: 0.35rem !important;
     }
     .squiz-quiz-buttons {
-        width: 90% !important;
+        width: 90% ;
     }
     .squiz-quiz-back, .squiz-quiz-next, .squiz-quiz-finish{
-        width: 40% !important;
+        width: 40% ;
         padding: 0.35rem 0.4rem !important;
         margin-bottom: 0.25rem !important;
         font-size: 0.65rem !important;
