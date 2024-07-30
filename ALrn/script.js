@@ -74,8 +74,23 @@ function handleOrientationChange() {
     }
 }
 
+function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+function checkDesktopModeOnMobile() {
+    if (isMobileDevice() && window.innerWidth > window.innerHeight) {
+        document.body.style.display = "none";
+        alert("Please disable desktop mode on your mobile device.");
+    } else {
+        document.body.style.display = "block";
+    }
+}
+
 // Initial check
 handleOrientationChange();
+checkDesktopModeOnMobile();
 
-// Listen for orientation changes
+// Listen for orientation changes and viewport resizing
 window.addEventListener("orientationchange", handleOrientationChange);
+window.addEventListener("resize", checkDesktopModeOnMobile);
