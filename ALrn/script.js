@@ -63,41 +63,46 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-function handleOrientationChange() {
-    if (window.orientation === 0 || window.orientation === 180) {
-        // Portrait mode
-        document.body.style.display = "block";
-    } else if (window.orientation === 90 || window.orientation === -90) {
-        // Landscape mode
-        document.body.style.display = "none";
-        alert("Please use the site in portrait mode for the best experience.");
-    }
-}
 
-// Initial check
-handleOrientationChange();
-
-// Listen for orientation changes
-window.addEventListener("orientationchange", handleOrientationChange);
 // 
 // 
 // 
 // 
-function checkDesktopModeOnMobile() {
-    function isMobileDevice() {
-        return /Mobi|Android/i.test(navigator.userAgent);
-    }
+// function handleOrientationChange() {
+//     if (window.orientation === 0 || window.orientation === 180) {
+//         // Portrait mode
+//         document.body.style.display = "block";
+//     } else if (window.orientation === 90 || window.orientation === -90) {
+//         // Landscape mode
+//         document.body.style.display = "none";
+//         alert("Please use the site in portrait mode for the best experience.");
+//     }
+// }
 
-    if (isMobileDevice() && window.innerWidth > window.innerHeight) {
-        document.body.style.display = "none";
-        alert("Please disable desktop mode on your mobile device.");
-    } else {
-        document.body.style.display = "block";
-    }
-}
+// // Initial check
+// handleOrientationChange();
 
-// Initial check
-checkDesktopModeOnMobile();
+// // Listen for orientation changes
+// window.addEventListener("orientationchange", handleOrientationChange);
+// // 
+// // 
+// // 
+// // 
+// function checkDesktopModeOnMobile() {
+//     function isMobileDevice() {
+//         return /Mobi|Android/i.test(navigator.userAgent);
+//     }
 
-// Listen for viewport resizing
-window.addEventListener("resize", checkDesktopModeOnMobile);
+//     if (isMobileDevice() && window.innerWidth > window.innerHeight) {
+//         document.body.style.display = "none";
+//         alert("Please disable desktop mode on your mobile device.");
+//     } else {
+//         document.body.style.display = "block";
+//     }
+// }
+
+// // Initial check
+// checkDesktopModeOnMobile();
+
+// // Listen for viewport resizing
+// window.addEventListener("resize", checkDesktopModeOnMobile);
