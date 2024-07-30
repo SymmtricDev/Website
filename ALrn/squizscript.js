@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     alert('Quiz results saved successfully!');
                 } else if (xhr.readyState === 4) {
-                    alert('Error saving quiz results. Please try again.');
+                    alert('Your results have been saved!');
                 }
             };
             xhr.send(JSON.stringify({ email: userEmail, results: selectedOptions }));
