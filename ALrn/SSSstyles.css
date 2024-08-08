@@ -275,7 +275,7 @@ header nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background: url('images/SSSlandingPlaceholder.svg') no-repeat center center;
+    background: url('images/SSSlandingGIF.gif?v=1') no-repeat center center;
     background-size: cover;
     color: #fff;
     padding: 20px;
@@ -285,6 +285,7 @@ header nav ul li a:hover {
     overflow: hidden;
 }
 
+/* Ensuring the GIF is correctly displayed across different screen sizes */
 .hero::before {
     content: '';
     position: absolute;
@@ -292,7 +293,8 @@ header nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    z-index: -1; /* Keeps the GIF in the background */
+    opacity: 1;
 }
 
 .hero .container {
@@ -339,9 +341,6 @@ header nav ul li a:hover {
     background-color: #c34f47;
 }
 
-.hero-image {
-    display: none; /* Hide the separate image element */
-}
 
 /* Media Queries for Phones */
 @media (max-width: 600px) {
@@ -431,43 +430,69 @@ header nav ul li a:hover {
 .fashion-persona {
     background-color: #fff;
     padding: 3rem 0;
-    text-align: center;
     width: 100%;
-    padding-bottom: 0%;
+}
+
+.fashion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 2rem; /* Space between text and image */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fashion-text {
+    flex: 2;
+}
+
+.fashion-images {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.fashion-images img {
+    /* width: 100%; */
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: -5rem;
 }
 
 .fashion-persona h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     font-weight: bold;
-    
 }
 
 .fashion-persona p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     max-width: 800px;
-    margin: 0 auto;
     margin-bottom: 2rem;
 }
 
-.fashion-images {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+/* Media Queries */
+@media (max-width: 768px) {
+    .fashion-content {
+        flex-direction: column; /* Stack text and image vertically */
+        text-align: center;
+    }
+
+    .fashion-images img {
+        max-width: 80%; /* Adjust image size for smaller screens */
+    }
+
+    .fashion-persona p {
+        max-width: 100%;
+        margin: 0 auto;
+    }
 }
 
-.fashion-images img {
-    width: 40%;
-    height: auto;
-    border-radius: 10px;
-    float: right;
-    margin-left: 20px; /* Optional: adds space between text and image */
-}
 
 
-
-/* Haute Couture Section */
 /* Haute Couture Section */
 .fashion-couture {
     background-color: #8B0000; /* Background color */
@@ -475,161 +500,61 @@ header nav ul li a:hover {
     justify-content: center;
     align-items: center;
     width: 100%; /* Full width */
-    height: 677px; /* Height to match the image */
+    height: auto; /* Adjust height to be automatic */
     margin: 0 auto; /* Center horizontally */
     padding: 0; /* Remove default padding */
     position: relative; /* Ensure z-index works */
     z-index: 10; /* Stack above other sections */
+    flex-direction: column; /* Stack text and image vertically */
 }
 
 .fashion-couture-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
     position: relative;
+    text-align: center; /* Center text and image */
 }
 
 .couture-text-section {
-    flex: 0 0 50%;
-    padding: 0 4rem;
+    padding: 2rem 1rem 0 1rem; /* Remove bottom padding */
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    max-width: 60%;
+    text-align: center;
 }
 
 .couture-text-section h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     font-weight: bold;
-    padding-left: 0rem;
 }
 
 .couture-text-section p {
     font-size: 1.3rem;
-    max-width: 480px;
+    max-width: 100%; /* Allow text to use the full width */
+    margin-bottom: 0; /* Ensure no margin at the bottom */
 }
 
 .couture-image-section {
-    height: 100%;
-    width: auto;
+    width: 100%;
     display: flex;
-    justify-content: flex-end; /* Align image to the right */
+    justify-content: center; /* Center image horizontally */
+    margin-top: 0; /* Remove space between text and image */
 }
 
 .couture-image-section img {
-    height: 100%;
-    width: auto;
+    width: 100%;
+    height: auto;
     object-fit: cover;
+    padding-bottom: 2rem;
+
 }
 
 /* Media Queries */
-@media (max-width: 1440px) {
-    .fashion-couture-content {
-        flex-direction: column;
-    }
-
-    .couture-text-section {
-        flex: 1;
-        text-align: center;
-        padding: 2rem 1rem;
-    }
-
-    .couture-image-section {
-        flex: 1;
-        width: 100%;
-        height: auto;
-    }
-
-    .couture-image-section img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-width: 1280px) {
-    .fashion-couture-content {
-        flex-direction: column;
-    }
-
-    .couture-text-section {
-        flex: 1;
-        text-align: center;
-        padding: 2rem 1rem;
-    }
-
-    .couture-image-section {
-        flex: 1;
-        width: 100%;
-        height: auto;
-        position: absolute;
-        bottom: 0; /* Align to the bottom */
-        right: 0; /* Align to the right */
-    }
-
-    .couture-image-section img {
-        width: auto;
-        height: auto;
-    }
-}
-
-@media (max-width: 1024px) {
-    /* .fashion-couture {
-        height: auto;
-        padding: 1rem;
-    } */
-
-    .fashion-couture-content {
-        flex-direction: column;
-    }
-
-    .couture-text-section {
-        flex: none;
-        padding: 2rem 1rem;
-        text-align: center;
-    }
-
-    .couture-text-section h1 {
-        font-size: 3rem;
-    }
-
-    .couture-text-section p {
-        font-size: 1.1rem;
-    }
-
-    .couture-image-section {
-        flex: none;
-        width: 100%;
-        height: auto;
-        position: absolute;
-        bottom: 0; /* Align to the bottom */
-        right: 0; /* Align to the right */
-    }
-
-    .couture-image-section img {
-        width: 100%;
-        height: auto;
-    }
-}
-
 @media (max-width: 768px) {
-    /* .fashion-couture {
-        height: auto;
-        padding: 1rem;
-    } */
-
-    .fashion-couture-content {
-        flex-direction: column;
-    }
-
-    .couture-text-section {
-        flex: none;
-        padding: 1.5rem 1rem;
-        text-align: center;
-    }
-
     .couture-text-section h1 {
         font-size: 2.5rem;
     }
@@ -638,61 +563,89 @@ header nav ul li a:hover {
         font-size: 1rem;
     }
 
-    .couture-image-section {
-        flex: none;
-        width: 100%;
-        height: auto;
-        position: absolute;
-        bottom: 0; /* Align to the bottom */
-        right: 0; /* Align to the right */
-    }
-
     .couture-image-section img {
-        width: 100%;
-        height: auto;
+        width: 90%;
     }
 }
 
 @media (max-width: 480px) {
-    /* .fashion-couture {
-        height: auto;
-        padding: 0.5rem;
-    } */
-
-    .fashion-couture-content {
-        flex-direction: column;
-    }
-
-    .couture-text-section {
-        flex: none;
-        padding: 1rem 0.5rem;
-        text-align: center;
-    }
-
     .couture-text-section h1 {
         font-size: 2rem;
     }
 
     .couture-text-section p {
         font-size: 0.9rem;
-        padding-top: 14px;
-
-    }
-
-    .couture-image-section {
-        flex: none;
-        width: 100%;
-        height: auto;
-        position: absolute;
-        bottom: 0; /* Align to the bottom */
-        right: 0; /* Align to the right */
     }
 
     .couture-image-section img {
         width: 100%;
-        height: auto;
     }
 }
+
+/* Media Query for tablets in portrait mode (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .couture-text-section h1 {
+        font-size: 3rem;
+    }
+
+    .couture-text-section p {
+        font-size: 1.2rem;
+    }
+
+    .couture-image-section img {
+        width: 95%;
+    }
+}
+
+/* Media Query for larger mobile devices (max-width: 640px) */
+@media (max-width: 640px) {
+    .couture-text-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .couture-text-section p {
+        font-size: 1rem;
+    }
+
+    .couture-image-section img {
+        width: 100%;
+    }
+}
+
+/* Media Query for very small devices (max-width: 360px) */
+@media (max-width: 360px) {
+    .couture-text-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .couture-text-section p {
+        font-size: 0.8rem;
+    }
+
+    .couture-image-section img {
+        width: 100%;
+    }
+
+    .couture-text-section {
+        padding: 1rem 0.5rem 0 0.5rem;
+    }
+}
+
+/* Media Query for ultra-wide screens (min-width: 1440px) */
+@media (min-width: 1440px) {
+    .couture-text-section h1 {
+        font-size: 4rem;
+    }
+
+    .couture-text-section p {
+        font-size: 1.5rem;
+    }
+
+    .couture-image-section img {
+        width: 80%;
+    }
+}
+
 
 /* Feedback Section */
 .feedback-section {
@@ -760,6 +713,8 @@ button {
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease;
+    margin-left: 24rem;
+
 }
 
 button:hover {

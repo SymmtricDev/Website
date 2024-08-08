@@ -31,7 +31,6 @@
                     <li><a href="squiz.html" data-aos="fade-down" data-aos-delay="800">Squiz</a></li>
                     <li><a href="SSS.html" data-aos="fade-down" data-aos-delay="800">SSS</a></li>
                     <li><a href="#feedback-form" data-aos="fade-down" data-aos-delay="800" class="no-underline">Feedback Form</a></li>
-
                 </ul>
             </nav>
             <!-- Burger Menu Icon -->
@@ -55,35 +54,41 @@
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-text" data-aos="fade-right" data-aos-duration="1500">
+                <!-- Your text content here -->
             </div>
             <div class="hero-image" data-aos="fade-left" data-aos-duration="1500">
-                <img src="images/SSSlandingPlaceholder.svg" alt="Fashion Picture">
+                <!-- <img src="images/SSSlandingGIF.gif" alt="Fashion Picture" id="heroGif"> -->
             </div>
         </div>
     </section>
+    
     <section class="discover">
         <div class="container discover-content" data-aos="fade-up" data-aos-duration="1500">
             <h2 class="shine-text">Unveiling Confidence, One Story at a Time</h2>
             <p>At Symmatric, we understand the shadows of doubt and the strings of criticism that often hold us back. Society's harsh judgments about our bodies and clothing choices can leave deep scars. But here, we celebrate individuality and fashion as a form of self-expression. We are committed to helping you break free from those insecurities and embrace your true self.</p>
             <div class="dots" data-aos="fade-up" data-aos-delay="200">
+                <!-- <span>.</span>
                 <span>.</span>
-                <span>.</span>
-                <span>.</span>
+                <span>.</span> -->
             </div>
         </div>
     </section>
     
     <section class="fashion-persona">
-        <h1 data-aos="fade-up" data-aos-duration="1500">Our Symbol: A Bloom of Strength</h1>
-        <p data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
-            Our logo, designed with three interlinked S's, forms the shape of a flower—a symbol of growth, resilience, and beauty in diversity. Just as each petal is unique, so are the stories that bloom here. This emblem represents the strength found in every voice, the beauty in every journey.
-        </p>
-        <div class="fashion-images" data-aos="zoom-in" data-aos-duration="1500">
-            <img src="images/bloomofstrength.svg" alt="Fashion 1">
-            <!-- <img src="images/symfashionpersona2.png" alt="Fashion 2">
-            <img src="images/symfashionpersona3.png" alt="Fashion 3"> -->
+        <div class="fashion-content">
+            <div class="fashion-text">
+                <h1 data-aos="fade-up" data-aos-duration="1500">Our Symbol: A Bloom of Strength</h1>
+                <p data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+                    Our logo, designed with three interlinked S's, forms the shape of a flower—a symbol of growth, resilience, and beauty in diversity. Just as each petal is unique, so are the stories that bloom here. This emblem represents the strength found in every voice, the beauty in every journey.
+                </p>
+            </div>
+            <div class="fashion-images" data-aos="zoom-in" data-aos-duration="1500">
+                <img src="images/bloomofstrength.svg" alt="Fashion 1">
+            </div>
         </div>
     </section>
+    
+    
 
 <!-- Haute Couture Section -->
 <section class="fashion-couture">
@@ -101,6 +106,8 @@
     <div class="feedback-form-container" id="feedback-form">
         <div class="feedback-form">
             <h2> Share Your Journey - Join Our Community of Voices</h2>
+            
+            <p>Delve into our curated collection of stories that explore themes of self-acceptance, fashion freedom, and overcoming societal pressures. These stories are not just tales but guides, inspiring you to embrace your uniqueness and redefine beauty on your own terms.</p>
             <form id="feedbackForm">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -110,17 +117,12 @@
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
                 </div>
+                <!-- <div class="form-group">
+                    <label for="email">Add Tags</label>
+                    <input type="tags" id="tags" name="tags" required>
+                </div> -->
                 <div class="form-group">
-                    <label for="feedbackType">Select feedback type</label>
-                    <select id="feedbackType" name="feedbackType" required>
-                        <option value="">Select feedback type</option>
-                        <option value="general">General</option>
-                        <option value="bug">Bug Report</option>
-                        <option value="feature">Feature Request</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
+                    <label for="message">Write your story here</label>
                     <textarea id="message" name="message" required></textarea>
                 </div>
                 <button type="submit">Submit</button>
