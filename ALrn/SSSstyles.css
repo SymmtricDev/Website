@@ -275,25 +275,24 @@ header nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background:  #b40e1d;/*, #ff6f61);*/
+    background: url('images/SSSlandingPlaceholder.svg') no-repeat center center;
+    background-size: cover;
     color: #fff;
-    padding: -20rem 20;
+    padding: 20px;
     width: 100%;
-    height: 200%;
-    max-height: 115%;
+    height: 100vh; /* Ensures the hero section fills the viewport height */
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .hero::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
 }
 
 .hero .container {
@@ -307,6 +306,8 @@ header nav ul li a:hover {
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
+    z-index: 2;
+    position: relative;
 }
 
 .hero-text {
@@ -338,16 +339,10 @@ header nav ul li a:hover {
     background-color: #c34f47;
 }
 
-.hero-image img {
-    width: 120%;
-    width: 39rem;
-    height: auto;
-    border-radius: 10px;
-    padding-top: 10px;
-    /* margin-right: -9rem; */
-    margin-top: 2rem;
-    margin-bottom: -6px;
+.hero-image {
+    display: none; /* Hide the separate image element */
 }
+
 /* Media Queries for Phones */
 @media (max-width: 600px) {
     .hero-content {
@@ -359,7 +354,6 @@ header nav ul li a:hover {
     .hero-text {
         max-width: 100%;
         padding-bottom: 2rem;
-        /* padding-top: 19px; */
     }
 
     .hero-text h1 {
@@ -446,6 +440,7 @@ header nav ul li a:hover {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     font-weight: bold;
+    
 }
 
 .fashion-persona p {
@@ -463,170 +458,15 @@ header nav ul li a:hover {
 }
 
 .fashion-images img {
-    width: 100%;
-    /* max-width: 300px; */
+    width: 40%;
     height: auto;
     border-radius: 10px;
+    float: right;
+    margin-left: 20px; /* Optional: adds space between text and image */
 }
 
-/* Fashion Creativity Section */
-.fashion-creativity {
-    background-color: #f3e4da;
-    color: #333;
-    padding: 3rem 0;
-    text-align: center;
-    width: 100%;
-}
 
-.fashion-creativity h1 {
-    font-size: 4.1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
 
-.fashion-creativity p { 
-    font-size: 1.3rem;
-    max-width: 914px;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-}
-
-.creativity-images {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.creativity-images img {
-    width: 100%;
-    max-width: 80%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Fashion Lives Section */
-.fashion-lives {
-    background-color: #fff;
-    padding: 3rem 0;
-    text-align: center;
-    width: 100%;
-}
-
-.fashion-lives-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.fashion-lives .image-section img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.fashion-lives .text-section {
-    max-width: 58%;
-}
-
-.fashion-lives .text-section h1 {
-    font-size: 4.2rem;
-    margin-bottom: 1rem;
-    font-weight: bolder;
-    text-align: right;
-    margin-bottom: 1rem;
-    padding-left: 0rem;
-}
-
-.fashion-lives .text-section p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    margin-left: 15rem;
-    text-align: right;
-}
-
-.fashion-lives .text-section button {
-    background-color: #000;
-    color: #fff;
-    padding: 0.8rem 2.2rem;
-    border: none;
-    border-radius: 37px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    margin-left: 39rem;
-}
-
-.fashion-lives .text-section button:hover {
-    background-color: #470902;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 1200px) {
-    .fashion-lives .text-section h1 {
-        font-size: 3.5rem;
-        margin-left: 0;
-    }
-    .fashion-lives .text-section p {
-        font-size: 1.1rem;
-        margin-left: 0;
-    }
-    .fashion-lives .text-section button {
-        margin-left: 0;
-    }
-}
-
-@media (max-width: 992px) {
-    .fashion-lives-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .fashion-lives .text-section {
-        max-width: 100%;
-        padding: 0 1rem;
-        text-align: center;
-    }
-    .fashion-lives .text-section h1 {
-        font-size: 3rem;
-        text-align: center;
-    }
-    .fashion-lives .text-section p {
-        font-size: 1rem;
-        text-align: center;
-        margin-left: 0;
-    }
-    .fashion-lives .text-section button {
-        margin-left: 0;
-        width: auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .fashion-lives .text-section h1 {
-        font-size: 2.5rem;
-    }
-    .fashion-lives .text-section p {
-        font-size: 0.9rem;
-    }
-    .fashion-lives .text-section button {
-        font-size: 0.9rem;
-        padding: 0.7rem 2rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .fashion-lives .text-section h1 {
-        font-size: 2rem;
-    }
-    .fashion-lives .text-section p {
-        font-size: 0.8rem;
-    }
-    .fashion-lives .text-section button {
-        font-size: 0.8rem;
-        padding: 0.6rem 1.8rem;
-    }
-}
 /* Haute Couture Section */
 /* Haute Couture Section */
 .fashion-couture {
@@ -928,7 +768,7 @@ button:hover {
 
 .feedback-info {
     flex: 1;
-    background: url('images/feedbacksvg.svg') no-repeat center center/cover; 
+    /* background: url('images/feedbacksvg.svg') no-repeat center center/cover;  */
     color: #fff;
     display: flex;
     flex-direction: column;
