@@ -73,10 +73,14 @@ window.addEventListener("resize", checkDesktopModeOnMobile);
 // });
 window.addEventListener('load', function() {
     var gif = document.getElementById('heroGif');
-    gif.style.animation = 'none'; // Reset any existing animations
+    
+    // Reload the GIF to make it play once
+    gif.src = gif.src + '?' + new Date().getTime(); // Bypass cache to force reload
 
-    // Set a timeout to force the GIF to reload and play once
-    setTimeout(function() {
-        gif.src = gif.src; // Reload the GIF
-    }, 100); // Adjust the timeout if needed
+    // Add an event listener to remove the GIF source once it has played to prevent looping
+    gif.addEventListener('load', function() {
+        setTimeout(function() {
+            gif.style.display = 'none'; // Hide the GIF once it's done playing
+        }, 5000); // Adjust the timeout duration based on the GIF's length
+    });
 });
